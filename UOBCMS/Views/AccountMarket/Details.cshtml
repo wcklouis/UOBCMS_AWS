@@ -1,0 +1,437 @@
+﻿@model UOBCMS.Models.cms_account_market
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab {
+        overflow: hidden; /* Ensures the tabs stay within bounds */
+        border: 1px solid #ccc; /* Border around the tab section */
+        background-color: #f1f1f1; /* Background color for tabs */
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+    }
+
+        .tab button {
+            background-color: inherit; /* Inherit background color */
+            border: none; /* No border */
+            outline: none; /* Remove outline */
+            cursor: pointer; /* Pointer cursor on hover */
+            padding: 10px 15px; /* Padding around buttons */
+            transition: 0.3s; /* Smooth transition for hover */
+            font-size: 17px; /* Font size for tab buttons */
+        }
+
+            .tab button:hover {
+                background-color: #ddd; /* Background color on hover */
+            }
+
+            .tab button.active {
+                background-color: #ccc; /* Active tab background */
+            }
+
+    .tabcontent {
+        display: none; /* Hidden by default */
+        padding: 20px; /* Padding around content */
+        border: 1px solid #ccc; /* Border around content */
+        border-top: none; /* No top border to connect with tabs */
+        position: absolute; /* Positioning from the top left corner */
+        top: 120; /* Align to top */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+
+        .tabcontent.show {
+            display: block; /* Show the active tab */
+        }
+</style>
+
+<h2>Account Market Details</h2>
+<div>
+    @Html.ActionLink("Client List", "Index", "Client")&nbsp;&nbsp;
+    @Html.ActionLink("Account List", "Index", "Account")
+</div>
+
+<br />
+<!-- Tab Links -->
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'Limit')">Limits</button>
+    <button class="tablinks" onclick="openTab(event, 'Interest')">Interests</button>
+    <button class="tablinks" onclick="openTab(event, 'Brokerage')">Brokerages</button>
+    <button class="tablinks" onclick="openTab(event, 'Rebate')">Rebates</button>
+    <button class="tablinks" onclick="openTab(event, 'InsCat')">Product Categories</button>
+    <button class="tablinks" onclick="openTab(event, 'CashSI')">Cash SI</button>
+    <button class="tablinks" onclick="openTab(event, 'InsSI')">Instrument SI</button>
+    <button class="tablinks" onclick="openTab(event, 'PriceCap')">Price Cap</button>
+    <button class="tablinks" onclick="openTab(event, 'ConfoSetting')">Confo Settings</button>
+</div>
+
+<br />
+<div id="Limit" class="tabcontent" style="display: block;">
+    <table class="formcontractterm" id="tbLimit" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Limits
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>Type</th>
+        <th>Limit Amount</th>
+        <th>Limit %</th>
+        <th>Limit Expiry Date</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_limits != null)
+            {
+                @foreach (var limit in Model.Cms_account_market_limits)
+                {
+                    <tr>
+                        <td>@limit.TypeString</td>
+                        <td>@limit.Lmt.ToString("N2")</td>
+                        <td>@((limit.Pct * 100.0m).ToString("N2"))</td>
+                        <td>@limit.Exp_dt.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+
+<div id="Interest" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbLimit" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <b>@Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Interests
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>CCY</th>
+        <th>Balance Status</th>
+        <th>Effective Date</th>
+        <!--<th>Reach</th>
+        <th>Interest Type</th>
+        <th>Adjust Rate</th>-->
+        <th>Comment</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_interests != null)
+            {
+                @foreach (var interest in Model.Cms_account_market_interests)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(@interest.Ccy, "Details", "AccountMarketInterest", new { id = interest.Id }, null)</td>
+                        <td>@interest.Bal_statusString</td>
+                        <td>@interest.Eff_dt.ToString("yyyy-MM-dd")</td>
+                        <td>@interest.Comment</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+<div id="Brokerage" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbBrokerage" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="8">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Brokerages
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>CCY</th>
+        <th>Source</th>
+        <th>Type</th>
+        <th>Client Specify</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Discount</th>
+        <th>Additional Discount</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_brokerages != null)
+            {
+                @foreach (var brokerage in Model.Cms_account_market_brokerages)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(@brokerage.Ccy, "Details", "AccountMarketBrokerage", new { id = brokerage.Id }, null)</td>
+                        <td>@brokerage.SourceString</td>
+                        <td>@brokerage.TypeString</td>
+                        <td>@brokerage.Clnt_specifyString</td>
+                        <td>@brokerage.Min.ToString("N2")</td>
+                        <td>@brokerage.Max.ToString("N2")</td>
+                        <td>@brokerage.Discount.ToString("N2")</td>
+                        <td>@brokerage.Additional_discount.ToString("N2")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+<div id="Rebate" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbRebate" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="7">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Rebates
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>CCY</th>
+        <th>Type</th>
+        <th>Calculation Method</th>
+        <th>Rate</th>
+        <th>Account</th>
+        <th>Description</th>
+        <th>Rebate CCY</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_rebates != null)
+            {
+                @foreach (var rebate in Model.Cms_account_market_rebates)
+                {
+                    <tr>
+                        <td>@rebate.Ccy</td>
+                        <td>@rebate.TypeString</td>
+                        <td>@rebate.Calcmtd</td>
+                        <td>@((rebate.Rate * 100.0m).ToString("N2"))</td>
+                        <td>@rebate.Acc</td>
+                        <td>@rebate.Desc</td>
+                        <td>@rebate.Rebate_ccy</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+
+<div id="InsCat" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbIntCat" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Product Categories
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>Product</th>
+        <th>Category</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_inscats != null)
+            {
+                @foreach (var inscat in Model.Cms_account_market_inscats)
+                {
+                    <tr>
+                        <td>@inscat.Product</td>
+                        <td>@inscat.Category</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+<div id="PriceCap" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbPriceCap" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Price Caps
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>Sec. Code</th>
+        <th>Margin Pct %</th>
+        <th>Price Cap</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_price_caps != null)
+            {
+                @foreach (var pcecap in Model.Cms_account_market_price_caps)
+                {
+                    <tr>
+                        <td>@pcecap.Sec_Code</td>
+                        <td>@((pcecap.Margin_pct * 100.0m).ToString("N2"))</td>
+                        <td>@pcecap.Price_cap.ToString("N6")</td>
+                        <td>@pcecap.Desc</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+
+<div id="CashSI" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbCashSI" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Cash SIs
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>CCY</th>
+        <th>Method</th>
+        <th>Default</th>
+        <th>Status</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_cash_sis != null)
+            {
+                @foreach (var si in Model.Cms_account_market_cash_sis)
+                {
+                    <tr>
+                        <td>@si.Ccy</td>
+                        <td>@si.Method</td>
+                        <td>@si.DefaultString</td>
+                        <td>@si.StatusString</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+<div id="InsSI" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbInsSI" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="6">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Instrument SIs
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>Depo</th>
+        <th>Location</th>
+        <th>Method</th>
+        <th>Depo Type</th>
+        <th>Default</th>
+        <th>Status</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_inst_sis != null)
+            {
+                @foreach (var si in Model.Cms_account_market_inst_sis)
+                {
+                    <tr>
+                        <td>@si.Depo</td>
+                        <td>@si.Location</td>
+                        <td>@si.Method</td>
+                        <td>@si.Depo_Type</td>
+                        <td>@si.DefaultString</td>
+                        <td>@si.StatusString</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br /><br />
+
+<div id="ConfoSetting" class="tabcontent" style="display: none;">
+    <table class="formcontractterm" id="tbConfoSetting" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="3">
+                    <div>
+                        <b>
+                            @Html.ActionLink(@Model.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account.Id }, null) >
+                            @Model.Mkt_code Confo Settings
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>CCY</th>
+        <th>Type</th>
+        <th>Instruction Code</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_confos != null)
+            {
+                @foreach (var confo in Model.Cms_account_market_confos)
+                {
+                    <tr>
+                        <td>@confo.Ccy</td>
+                        <td>@confo.TypeString</td>
+                        <td>@confo.Instruction_code</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+
+
+
+<script>
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>

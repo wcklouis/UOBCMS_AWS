@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0bf33efd-424e-4905-9618-f7352984c159</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.AspNetCore.Core" Version="24.1.6" />
+    <PackageReference Include="DevExpress.Win.Design" Version="24.1.6" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="4.0.2" />
+    <PackageReference Include="EPPlus" Version="8.0.6" />
+    <PackageReference Include="log4net" Version="3.0.5-preview.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="NPOI" Version="2.7.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="TencentCloudSDK" Version="3.0.1199" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\stylesheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DevExtreme.AspNet.Core">
+      <HintPath>..\..\..\..\.nuget\packages\devextreme.aspnet.core\24.1.6\lib\net6.0\DevExtreme.AspNet.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

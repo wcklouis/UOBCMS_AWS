@@ -1,0 +1,729 @@
+﻿@model UOBCMS.Models.cms_client
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab {
+        overflow: hidden; /* Ensures the tabs stay within bounds */
+        border: 1px solid #ccc; /* Border around the tab section */
+        background-color: #f1f1f1; /* Background color for tabs */
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+    }
+
+        .tab button {
+            background-color: inherit; /* Inherit background color */
+            border: none; /* No border */
+            outline: none; /* Remove outline */
+            cursor: pointer; /* Pointer cursor on hover */
+            padding: 10px 15px; /* Padding around buttons */
+            transition: 0.3s; /* Smooth transition for hover */
+            font-size: 17px; /* Font size for tab buttons */
+        }
+
+            .tab button:hover {
+                background-color: #ddd; /* Background color on hover */
+            }
+
+            .tab button.active {
+                background-color: #ccc; /* Active tab background */
+            }
+
+    .tabcontent {
+        display: none; /* Hidden by default */
+        padding: 20px; /* Padding around content */
+        border: 1px solid #ccc; /* Border around content */
+        border-top: none; /* No top border to connect with tabs */
+        position: absolute; /* Positioning from the top left corner */
+        top: 120px; /* Align to top */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+
+        .tabcontent.show {
+            display: block; /* Show the active tab */
+        }
+
+    .edit-link {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+        .edit-link:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+</style>
+
+<h2>Client Details</h2>
+
+<div>
+    @Html.ActionLink("Client List", "Index", "Client")&nbsp;&nbsp;
+    @Html.ActionLink("Account List", "Index", "Account")
+</div>
+<br />
+
+<!-- Tab Links -->
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'BasicInfo')">Basic Information</button>
+    <button class="tablinks" onclick="openTab(event, 'ID')">IDs</button>
+    <button class="tablinks" onclick="openTab(event, 'ChildClient')">Child Clients</button>
+    <button class="tablinks" onclick="openTab(event, 'Account')">Accounts</button>
+    <button class="tablinks" onclick="openTab(event, 'JointAccount')">Joint Accounts</button>
+    <button class="tablinks" onclick="openTab(event, 'AdditionalInfo')">Additional Information</button>
+    <button class="tablinks" onclick="openTab(event, 'BankAccount')">HKD Bank Accounts</button>
+    <button class="tablinks" onclick="openTab(event, 'OverseaBankAccount')">Non-HKD Bank Accounts</button>
+    <button class="tablinks" onclick="openTab(event, 'Phone')">Phones</button>
+    <button class="tablinks" onclick="openTab(event, 'Email')">Emails</button>
+    <button class="tablinks" onclick="openTab(event, 'Address')">Addresses</button>
+    <button class="tablinks" onclick="openTab(event, 'RelatedStaff')">Related Staffs</button>
+    <button class="tablinks" onclick="openTab(event, 'NorthBound')">North Bound</button>
+    <!--<button class="tablinks" onclick="openTab(event, 'MonthlySaving')">Monthly Saving Plan</button>-->
+</div>
+
+<div class="tab-content">
+    <div id="BasicInfo" class="tabcontent" style="display: block;">
+        <table class="formcontractterm" id="tbBasicInfo" border="1" cellspacing=0 cellpadding=7>
+            <tr>
+                <td colspan="8"><div><h4><u>Basic Information</h4></u></div></td>
+            </tr>
+            <tr>
+                <td><b>CIF</b></td>
+                <td>@Model.Cif</td>
+            </tr>
+            <tr>
+                <td><b>Name (Eng)</b></td>
+                <td>@Model.Ename</td>
+            </tr>
+            <tr>
+                <td><b>Name (Chi)</b></td>
+                <td>@Model.Cname</td>
+            </tr>
+            <tr>
+                <td><b>Full Name</b></td>
+                <td>@Model.Fullname</td>
+            </tr>
+            <tr>
+                <td><b>First Name</b></td>
+                <td>@Model.Firstname</td>
+            </tr>
+            <tr>
+                <td><b>Middle Name</b></td>
+                <td>@Model.Middlename</td>
+            </tr>            
+            <tr>
+                <td><b>Last Name</b></td>
+                <td>@Model.Surname</td>
+            </tr>
+            <tr>
+                <td><b>Gender</b></td>
+                <td>@Model.GenderString</td>
+            </tr>
+            <!--<tr>
+                <td><b>Resident ID</b></td>
+                <td>@Model.ResidentId</td>
+            </tr>
+            <tr>
+                <td><b>BR No.</b></td>
+                <td>@Model.Brno</td>
+            </tr>
+            <tr>
+                <td><b>International ID</b></td>
+                <td>@Model.InternationalId</td>
+            </tr>
+            <tr>
+                <td><b>TIN</b></td>
+                <td>@Model.Tin</td>
+            </tr>-->
+            <tr>
+                <td><b>Nationality</b></td>
+                <td>@Model.Nationality</td>
+            </tr>
+            <tr>
+                <td><b>Occupation</b></td>
+                <td>@Model.Occupation</td>
+            </tr>
+            <tr>
+                <td><b>Employeer</b></td>
+                <td>@Model.Employer</td>
+            </tr>
+            <tr>
+                <td><b>Category</b></td>
+                <td>@Model.CategoryString</td>
+            </tr>
+            <tr>
+                <td><b>DOB / Company Open Date</b></td>
+                <td>@Model.Init_dt.ToString("yyyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <td><b>Country of Birth</b></td>
+                <td>@Model.Init_place</td>
+            </tr>
+            <tr>
+                <td><b>On-boarding Date</b></td>
+                <td>@Model.Cob_dt.ToString("yyyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <td><b>Nature</b></td>
+                <td>@Model.NatureString</td>
+            </tr>
+            <tr>
+                <td><b>Jurisdication of Residence</b></td>
+                <td>@Model.Jurisdiction_residence</td>
+            </tr>
+            <tr>
+                <td><b>Status</b></td>
+                <td>@Model.StatusString</td>
+            </tr>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="AdditionalInfo" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbAdditionalInfo" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="5"><div><h4><u>Additional Info</h4></u></div></td>
+                </tr>
+            <th>Info Name</th>
+            <th>Info Value</th>
+            </thead>
+            @for (int i = 0; i < Model.Cms_client_additionalinfos.Count; i++)
+            {
+                var additionalInfo = Model.Cms_client_additionalinfos.ToList()[i];
+                <tr>
+                    <td>@additionalInfo.Cms_additionalinfo.Name</td>
+                    <td>@additionalInfo.Value</td>
+                </tr>
+            }            
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="ID" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbIDList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="5"><div><h4><u>ID list</h4></u></div></td>
+                </tr>
+            <th>Type</th>
+            <th>ID No.</th>
+            <th>Issue Country</th>
+            <th>Issue Date</th>
+            <th>Expiry Date</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Cms_client_ids.Count; i++)
+                {
+                    var client_id = Model.Cms_client_ids.ToList()[i];
+                    <tr>
+                        <td>@client_id.TypeString</td>
+                        <td>@client_id.Idno</td>
+                        <td>@client_id.Issue_country</td>
+                        <td>@client_id.Issue_dt?.ToString("yyyy-MM-dd")</td>
+                        <td>@client_id.Exp_dt?.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="ChildClient" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbAccList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="2"><div><h4><u>Child Client list</h4></u></div></td>
+                </tr>
+            <th>Client Id</th>
+            <th>Client Name</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Cms_child_clients.Count; i++)
+                {
+                    var child_client = Model.Cms_child_clients.ToList()[i];
+                <tr>
+                    <td>
+                        @Html.ActionLink(@child_client.Cms_child_client.Cif, "Details", "Client", new { id = @child_client.Client_id }, null)
+                    </td>
+                    <td>@child_client.Cms_child_client.Ename</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="Account" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbAccList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="2"><div><h4><u>Account list</h4></u></div></td>
+                </tr>
+            <th>Account Type</th>
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Cms_client_accounts.Count; i++)
+                {
+                    var client_account = Model.Cms_client_accounts.ToList()[i];
+                <tr>
+                    <td>@client_account.Cms_account.TypeString</td>
+                    <td>
+                        @Html.ActionLink(@client_account.Cms_account.AccNo, "Details", "Account", new { id = @client_account.Cms_account.Id }, null)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="JointAccount" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbAccList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="4"><div><h4><u>Account list</h4></u></div></td>
+                </tr>
+            <th>Account Type</th>
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Cms_virtual_clients.Count; i++)
+                {
+                    var virtual_client = Model.Cms_virtual_clients.ToList()[i];
+
+                    for (int j = 0; j < @virtual_client.Cms_parent_client.Cms_client_accounts.Count; j++)
+                    {
+                        var client_account = @virtual_client.Cms_parent_client.Cms_client_accounts.ToList()[j];
+                <tr>
+                    <td>@client_account.Cms_account.TypeString</td>
+                    <td>
+                        @Html.ActionLink(@client_account.Cms_account.AccNo, "Details", "Account", new { id = @client_account.Cms_account.Id }, null)
+                    </td>
+                </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="BankAccount" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="10"><div><h4><u>HKD Bank Account list</h4></u></div></td>
+                </tr>
+            <th>Bank Code</th>
+            <th>Bank Name</th>
+            <th>Bank Account Name</th>
+            <th>Bank Ccy</th>
+            <th>Bank Account Number</th>
+            <th>Account Number</th>
+            <th>Payment Type</th>
+            <th>FPS Payment Type</th>
+            <th>Default HKD Bank</th>
+            <th>Status</th>
+            </thead>
+            <tbody>
+                @foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    // Check if Cms_account is not null
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var account_bank in client_account.Cms_account.Cms_account_banks)
+                        {
+                            // Check if Cms_client_bank and its Cms_bank are not null
+                            if (account_bank.Cms_client_bank != null && account_bank.Cms_client_bank.Cms_bank != null && account_bank.Cms_client_bank.Status != "V")
+                            {
+                <tr>
+                    <td>@account_bank.Cms_client_bank.Cms_bank.Bank_code</td>
+                    <td>@account_bank.Cms_client_bank.Cms_bank.Bank_name</td>
+                    <td>@account_bank.Cms_client_bank.Bank_accname</td>
+                    <td>@account_bank.Cms_client_bank.Ccy</td>
+                    <td>@account_bank.Cms_client_bank.Bank_accno</td>
+                    <td>@account_bank.Cms_account.AccNo</td>
+                    <td>@account_bank.Cms_client_bank.Default_payment_type_string</td>
+                    <td>@account_bank.Cms_client_bank.Fps_payment_type_string</td>
+                    <td>@account_bank.DefaultLocalHKDBankString</td>
+                    <td>@account_bank.Cms_client_bank.StatusString</td>
+                </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="OverseaBankAccount" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="16"><div><h4><u>Non-HKD Bank Account list</h4></u></div></td>
+                </tr>
+            <th>Beneficiary Bank Country</th>
+            <th>Beneficiary Bank Name</th>
+            <th>Beneficiary Bank Code</th>
+            <th>Beneficiary Swift Code</th>
+            <th>Beneficiary Bank Address</th>
+            <th>Beneficiary Account Name</th>
+            <th>Beneficiary Account Number</th>
+            <th>Beneficiary Account Ccy</th>
+            <th>Correspondent Bank Country</th>
+            <th>Correspondent Bank Name</th>
+            <th>Correspondent Bank Code</th>
+            <th>Correspondent Swift Code</th>
+            <th>Message to Bank</th>
+            <th>Account Number</th>
+            <th>Payment Type</th>
+            <th>Status</th>
+            </thead>
+            <tbody>
+                @foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    // Check if Cms_account is not null
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var account_bank in client_account.Cms_account.Cms_account_banks)
+                        {
+                            if (account_bank.Cms_client_bank != null && account_bank.Cms_client_bank.Bene_bank_name != null && account_bank.Cms_client_bank.Status != "V")
+                            {
+                <tr>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_country</td>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_name</td>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_code</td>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_swift</td>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_address</td>
+                    <td>@account_bank.Cms_client_bank.Bene_bank_accname</td>
+                    <td>@account_bank.Cms_client_bank.Bank_accno</td>
+                    <td>@account_bank.Cms_client_bank.Ccy</td>
+                    <td>@account_bank.Cms_client_bank.Corr_bank_country</td>
+                    <td>@account_bank.Cms_client_bank.Corr_bank_name</td>
+                    <td>@account_bank.Cms_client_bank.Corr_bank_code</td>
+                    <td>@account_bank.Cms_client_bank.Corr_bank_swift</td>
+                    <td>@account_bank.Cms_client_bank.Msg_to_bank</td>
+                    <td>@account_bank.Cms_account.AccNo</td>
+                    <td>@account_bank.Cms_client_bank.Default_payment_type_string</td>
+                    <td>@account_bank.Cms_client_bank.StatusString</td>
+                </tr>
+                            }
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="Phone" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbPhoneList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="6"><div><h4><u>Phone list</h4></u></div></td>
+                </tr>
+            <th>Type</th>
+            <th>SubType</th>
+            <th>Country Code</th>
+            <th>Area Code</th>
+            <th>Phone Number</th>
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+
+                @{
+                // Create a list to hold all phones
+                var allPhones = new List<(string Type, string TypeString, string SubTypeString, string Country_code, string Area_code, string Value, string AccNo)>();
+
+                // Collect all phone data
+                foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var account_phone in client_account.Cms_account.Cms_account_phones)
+                        {
+                            allPhones.Add((
+                                account_phone.Cms_client_phone.Type,
+                                account_phone.Cms_client_phone.TypeString,
+                                account_phone.Cms_client_phone.SubTypeString,
+                                account_phone.Cms_client_phone.Country_code,
+                                account_phone.Cms_client_phone.Area_code,
+                                account_phone.Cms_client_phone.Value,
+                                account_phone.Cms_account.AccNo
+                            ));
+                        }
+                    }
+                }
+
+                // Sort the phones by type
+                var sortedPhones = allPhones.OrderBy(p => p.Type).ToList();
+
+                // Render sorted phone data
+                foreach (var phone in sortedPhones)
+                {
+                    <tr>
+                        <td>@phone.TypeString</td>
+                        <td>@phone.SubTypeString</td>
+                        <td>@phone.Country_code</td>
+                        <td>@phone.Area_code</td>
+                        <td>@phone.Value</td>
+                        <td>@phone.AccNo</td>
+                    </tr>
+                }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="Email" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbEmailList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="4"><div><h4><u>Email list</h4></u></div></td>
+                </tr>
+            <th>Type</th>
+            <th>Email</th>
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+                @foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    // Check if Cms_account is not null
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var account_email in client_account.Cms_account.Cms_account_emails)
+                        {
+                <tr>
+                    <td>@account_email.Cms_client_email.TypeString</td>
+                    <td>@account_email.Cms_client_email.Email</td>
+                    <td>@account_email.Cms_account.AccNo</td>
+                </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="Address" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbAddressList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="7"><div><h4><u>Address list</h4></u></div></td>
+                </tr>
+            <th>Type</th>
+            <th>Address 1</th>
+            <th>Address 2</th>
+            <th>Address 3</th>
+            <th>Address 4</th>
+            <th>Country</th>
+            <!--<th>District</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Postal Code</th>
+            <th>Zip Code</th>-->
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+                @foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    // Check if Cms_account is not null
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var account_address in client_account.Cms_account.Cms_account_addresses)
+                        {
+                <tr>
+                    <td>@account_address.Cms_client_address.TypeString</td>
+                    <td>@account_address.Cms_client_address.Addr1</td>
+                    <td>@account_address.Cms_client_address.Addr2</td>
+                    <td>@account_address.Cms_client_address.Addr3</td>
+                    <td>@account_address.Cms_client_address.Addr4</td>
+                    <td>@account_address.Cms_client_address.Country</td>
+                    <!--<td>@account_address.Cms_client_address.District</td>
+                    <td>@account_address.Cms_client_address.City</td>
+                    <td>@account_address.Cms_client_address.Province</td>
+                    <td>@account_address.Cms_client_address.Postal_code</td>
+                    <td>@account_address.Cms_client_address.Zip</td>-->
+                    <td>@account_address.Cms_account.AccNo</td>
+                </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="MonthlySaving" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbMthSavingPlanList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="8"><div><h4><u>Monthly Saving Plan</h4></u></div></td>
+                </tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Market</th>
+            <th>Sec. Code</th>
+            <th>Sec. Name</th>
+            <th>Ccy</th>
+            <th>Investment Amount</th>
+            <th>Account Number</th>
+            </thead>
+            <tbody>
+                @foreach (var client_account in Model.Cms_client_accounts)
+                {
+                    // Check if Cms_account is not null
+                    if (client_account.Cms_account != null)
+                    {
+                        foreach (var mthsaving_plan in client_account.Cms_account.Cms_account_mthsaving_plans)
+                        {
+                            // Check if Cms_client_bank and its Cms_bank are not null
+                <tr>
+                    <td>@mthsaving_plan.Eff_start_dt.ToString("yyyy-MM-dd")</td>
+                    <td>@mthsaving_plan.Eff_end_dt.ToString("yyyy-MM-dd")</td>
+                    <td>@mthsaving_plan.Mkt_code</td>
+                    <td>@mthsaving_plan.Sec_code</td>
+                    <td>@await Component.InvokeAsync("Securities", new { mktCode = mthsaving_plan.Mkt_code, secCode = mthsaving_plan.Sec_code })</td>
+                    <td>@mthsaving_plan.Ccy</td>
+                    <td>@mthsaving_plan.Invest_amt.ToString("N2")</td>
+                    <td>@client_account.Cms_account.AccNo</td>
+                </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div id="RelatedStaff" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbRelatedStaff" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="2"><div><h4><u>Related Staff List</h4></u></div></td>
+                </tr>
+            <th>Staff Name</th>
+            <th>Relationship</th>
+            </thead>
+            <tbody>
+                @if (Model?.Cms_client_related_staffs != null && Model.Cms_client_related_staffs.Any())
+                {
+                    foreach (var related_staff in Model.Cms_client_related_staffs)
+                    {
+                        <tr>
+                            <td>@related_staff?.Staff_name</td>
+                            <td>@related_staff?.RelationshipString</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2">No related staff found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="NorthBound" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbNorthBoundInfo" border="1" cellspacing=0 cellpadding=7>
+            <tr>
+                <td colspan="8"><div><h4><u>North Bound Information</h4></u></div></td>
+            </tr> 
+            @if (Model?.Cms_client_north_bound != null)
+            {
+                <tr>
+                    <td><b>ID Type</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Cms_client_id.TypeString
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>ID No.</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Cms_client_id.Idno
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>ID Issue Country</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Cms_client_id.Issue_country
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>ID Issue Date</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Cms_client_id.Issue_dt?.ToString("yyyy-MM-dd")
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>ID Expiry Date</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Cms_client_id.Exp_dt?.ToString("yyyy-MM-dd")
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Chinese Name</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Chi_name
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>First Name</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.First_name
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Last Name</b></td>
+                    <td>
+                        @Model.Cms_client_north_bound.Last_name
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">No North Bound Information.</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <br />
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>

@@ -1,0 +1,141 @@
+2025-06-30 13:15:12,666 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:15:17,097 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:15:17,958 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 13:15:18,002 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 13:15:18,020 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 13:15:18,040 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 13:15:18,089 [6] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:15:18,113 [13] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:15:18,132 [6] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:15:18,181 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 13:15:18,207 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 13:15:24,941 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:15:59,589 [20] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:16:17,337 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:17:06,846 [23] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:17:17,453 [21] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:17:29,295 [21] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:19,415 [50] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:24,170 [49] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:24:30,384 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:30,395 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:24:30,399 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:30,517 [49] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:24:33,608 [49] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:33,620 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:24:33,624 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:24:33,817 [54] INFO  UOBCMS.Classes.Logger - AEController\GetAEbyAccno		AE of: 194419-001M is found
+2025-06-30 13:24:35,110 [53] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:25:31,065 [57] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:25:40,288 [57] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-30 13:26:22,402 [60] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:26:44,175 [61] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:27:35,296 [65] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:27:55,599 [67] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:28:02,266 [65] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:34:34,197 [91] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:34:38,666 [93] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:34:43,832 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:34:43,844 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:34:43,848 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:34:44,061 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:34:48,028 [93] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:34:48,037 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:34:48,041 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:34:48,307 [92] INFO  UOBCMS.Classes.Logger - AEController\GetAEbyAccno		AE of: 194419-001M is found
+2025-06-30 13:34:48,960 [94] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:35:08,678 [94] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:36:02,048 [97] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-30 13:36:23,201 [99] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:36:44,811 [102] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:44:46,795 [126] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:45:12,376 [125] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:45:26,564 [126] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:45:31,499 [126] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:45:40,107 [127] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:45:44,199 [127] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:17,798 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:49:22,091 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:26,651 [109] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:49:26,669 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:26,674 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:49:26,806 [111] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:30,401 [112] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:49:30,414 [112] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:30,418 [109] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:49:30,525 [112] INFO  UOBCMS.Classes.Logger - AEController\GetAEbyAccno		AE of: 194419-001M is found
+2025-06-30 13:49:30,769 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:49:42,904 [110] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:51:26,582 [103] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:51:32,629 [105] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-30 13:51:47,214 [101] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:53:12,014 [92] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:53:50,249 [94] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:54:15,306 [96] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:54:18,256 [87] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:54:48,419 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:01,030 [85] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:17,220 [83] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:55:20,067 [85] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:25,937 [85] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:55:25,949 [82] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:25,953 [85] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:55:26,168 [83] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:29,112 [85] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:55:29,124 [82] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:55:29,128 [82] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 13:55:29,419 [85] INFO  UOBCMS.Classes.Logger - AEController\GetAEbyAccno		AE of: 194419-001M is found
+2025-06-30 13:55:30,087 [82] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:56:05,661 [80] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:56:14,107 [81] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-30 13:56:30,244 [80] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:56:41,496 [80] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:57:25,788 [79] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:57:43,920 [79] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:58:45,706 [74] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 13:59:40,137 [73] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:00:08,291 [71] INFO  UOBCMS.Classes.Logger - AccountController\SaveBulkEmail		UOBCMS.Models.api.body_cms_client_email
+2025-06-30 14:00:11,113 [72] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:00:22,507 [71] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:00:25,557 [72] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:00:26,298 [72] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:00:26,322 [71] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:00:26,329 [72] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:00:26,335 [70] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:00:26,346 [72] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:00:26,355 [70] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:00:26,362 [70] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:00:26,372 [70] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 14:00:26,383 [70] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 14:06:51,817 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:06:57,694 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:06:58,040 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:06:58,053 [38] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:06:58,060 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:06:58,067 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-30 14:06:58,077 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:06:58,087 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:06:58,094 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:06:58,101 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 14:06:58,113 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-30 14:07:02,922 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:07:08,514 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:07:08,525 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:07:08,530 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:07:08,591 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:07:11,063 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:07:11,072 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:07:11,076 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-30 14:07:11,081 [38] INFO  UOBCMS.Classes.Logger - AEController\GetAEbyAccno		AE of: 194419-001M is found
+2025-06-30 14:07:11,307 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:07:37,992 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:08:46,371 [30] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-30 14:10:35,247 [17] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:10:57,673 [21] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:11:28,538 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:11:42,721 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:12:03,204 [6] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:12:14,981 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:12:33,580 [13] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-30 14:12:36,866 [13] INFO  UOBCMS.Classes.Logger - AccountController\SaveBulkEmail		UOBCMS.Models.api.body_cms_client_email
+2025-06-30 14:12:37,183 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found

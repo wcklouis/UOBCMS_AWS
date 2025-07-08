@@ -1,0 +1,120 @@
+﻿@model UOBCMS.Models.cms_account_market_interest
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab {
+        overflow: hidden; /* Ensures the tabs stay within bounds */
+        border: 1px solid #ccc; /* Border around the tab section */
+        background-color: #f1f1f1; /* Background color for tabs */
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+    }
+
+        .tab button {
+            background-color: inherit; /* Inherit background color */
+            border: none; /* No border */
+            outline: none; /* Remove outline */
+            cursor: pointer; /* Pointer cursor on hover */
+            padding: 10px 15px; /* Padding around buttons */
+            transition: 0.3s; /* Smooth transition for hover */
+            font-size: 17px; /* Font size for tab buttons */
+        }
+
+            .tab button:hover {
+                background-color: #ddd; /* Background color on hover */
+            }
+
+            .tab button.active {
+                background-color: #ccc; /* Active tab background */
+            }
+
+    .tabcontent {
+        display: none; /* Hidden by default */
+        padding: 20px; /* Padding around content */
+        border: 1px solid #ccc; /* Border around content */
+        border-top: none; /* No top border to connect with tabs */
+        position: absolute; /* Positioning from the top left corner */
+        top: 120; /* Align to top */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+
+        .tabcontent.show {
+            display: block; /* Show the active tab */
+        }
+</style>
+
+<h2>Account Market Details</h2>
+<div>
+    @Html.ActionLink("Client List", "Index", "Client")&nbsp;&nbsp;
+    @Html.ActionLink("Account List", "Index", "Account")
+</div>
+
+<br />
+<!-- Tab Links -->
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'InterestDetail')">Interest Details</button>
+</div>
+
+<br />
+<div id="InterestDetail" class="tabcontent" style="display: block;">
+    <table class="formcontractterm" id="tbLimit" border="1" cellspacing=0 cellpadding=7>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <div>
+                        <b>@Html.ActionLink(@Model.Cms_account_market.Cms_account.AccNo, "Details", "Account", new { id = @Model.Cms_account_market.Cms_account.Id }, null) > 
+                        @Html.ActionLink(@Model.Cms_account_market.Mkt_code, "Details", "AccountMarket", new { id = @Model.Cms_account_market.Id }, null) >
+                            @Model.Ccy Interests
+                        </b>
+                    </div>
+                </td>
+            </tr>
+        <th>Reach</th>
+        <th>Interest Type</th>
+        <th>Adjust Rate %</th>
+        </thead>
+        <tbody>
+            @if (Model.Cms_account_market_interest_details != null)
+            {
+                @foreach (var interestdetail in Model.Cms_account_market_interest_details)
+                {
+                    <tr>
+                        <td>@interestdetail.Reach.ToString("N8")</td>
+                        <td>@interestdetail.Int_typeString</td>
+                        <td>@((interestdetail.Adj_rate * 100.0m).ToString("N6"))</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+
+<script>
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>

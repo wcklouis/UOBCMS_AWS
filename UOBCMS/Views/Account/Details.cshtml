@@ -1,0 +1,1660 @@
+﻿@model UOBCMS.Models.cms_account
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab {
+    overflow: hidden; /* Ensures the tabs stay within bounds */
+    border: 1px solid #ccc; /* Border around the tab section */
+    background-color: #f1f1f1; /* Background color for tabs */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    }
+
+    .tab button {
+        background-color: inherit; /* Inherit background color */
+        border: none; /* No border */
+        outline: none; /* Remove outline */
+        cursor: pointer; /* Pointer cursor on hover */
+        padding: 10px 15px; /* Padding around buttons */
+        transition: 0.3s; /* Smooth transition for hover */
+        font-size: 17px; /* Font size for tab buttons */
+    }
+
+    .tab button:hover {
+        background-color: #ddd; /* Background color on hover */
+    }
+
+    .tab button.active {
+        background-color: #ccc; /* Active tab background */
+    }
+
+    .tabcontent {
+        display: none; /* Hidden by default */
+        padding: 20px; /* Padding around content */
+        border: 1px solid #ccc; /* Border around content */
+        border-top: none; /* No top border to connect with tabs */
+        position: absolute; /* Positioning from the top left corner */
+        top: 120; /* Align to top */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+
+    .tabcontent.show {
+        display: block; /* Show the active tab */
+    }
+</style>
+
+<h2>Account Details</h2>
+<div>
+    @Html.ActionLink("Client List", "Index", "Client")&nbsp;&nbsp;
+    @Html.ActionLink("Account List", "Index", "Account")
+</div>
+
+<br />
+<!-- Tab Links -->
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'BasicInfo')">Basic Information</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Document', '/Account/api/docs')">Documents</button>
+    <button class="tablinks" onclick="openTab_url(event, 'AdditionalInfo', '/Account/api/addinfos')">Additional Information</button>
+    <button class="tablinks" onclick="openTab_url(event, 'BankAccount', '/Account/api/banks')">HKD Bank Accounts</button>
+    <button class="tablinks" onclick="openTab_url(event, 'OverseaBankAccount', '/Account/api/banks')">Non-HKD Bank Accounts</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Phone', '/Account/api/phones')">Phones</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Email', '/Account/api/emails')">Emails</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Address', '/Account/api/addresses')">Addresses</button>
+    <button class="tablinks" onclick="openTab(event, 'W8')">W8</button>    
+    <button class="tablinks" onclick="openTab(event, 'DKQ')">DKQ</button>
+    <button class="tablinks" onclick="openTab_url(event, 'HKIDR', '/Account/api/hkidrs')">HKIDR</button>
+    <button class="tablinks" onclick="openTab(event, 'MonthlySaving')">Monthly Saving Plan</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Limit', '/Account/api/limits')">Limits</button>
+    <button class="tablinks" onclick="openTab_url(event, 'Market', '/Account/api/markets')">Markets</button>
+    <button class="tablinks" onclick="openTab_url(event, 'SocialMedia', '/Account/api/socialmedias')">Social Medias</button>
+    <button class="tablinks" onclick="openTab(event, 'NorthBound')">North Bound</button>    
+    <button class="tablinks" onclick="openTab_url(event, 'ControllingPerson', '/Account/api/controllingpersons')">Controlling Persons</button>
+    <button class="tablinks" onclick="openTab_url(event, 'AuthParty', '/Account/api/authparties')">Authorized Parties</button>
+    <button class="tablinks" onclick="openTab_url(event, 'CompanyStructure', '/Account/api/companystructure')">Company Structure</button>
+</div>
+
+<div class="tab-content">
+    <div id="BasicInfo" class="tabcontent" style="display: block;">
+        <table class="formcontractterm" id="tbBasicInfo" border="1" cellspacing=0 cellpadding=7>
+            <tr>
+                <td colspan="2"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Basic Information</b></div></td>
+            </tr>
+            <tr>
+                <td><b>CIF</b</td>
+                <td>@Html.ActionLink(@Model.Cms_client_account.Cms_client.Cif, "Details", "Client", new { id = @Model.Cms_client_account.Cms_client.Id }, null)</td>
+            </tr>
+            <tr>
+                <td><b>Account Number</b</td>
+                <td>@Model.AccNo</td>
+            </tr>
+            <tr>
+                <td><b>Name (Eng)</b</td>
+                <td>@Model.Ename</td>
+            </tr>  
+            <tr>
+                <td><b>Name (Chi)</b</td>
+                <td>@Model.Cname</td>
+            </tr>
+            <tr>
+                <td><b>Cheque Name</b</td>
+                <td>@Model.Chqname</td>
+            </tr>
+            <tr>
+                <td><b>Type</b</td>
+                <td>@Model.TypeString</td>
+            </tr>
+            <tr>
+                <td><b>AE Code</b</td>
+                <td>@Model.Aecode</td>
+            </tr>
+            <tr>
+                <td><b>AE Name</b</td>
+                <!--<td>@Html.ActionLink(@Model.Cms_ae.Name, "Details", "AE", new { id = @Model.Ae_id}, null)</td>-->
+                <td>@Model.Cms_ae.Name</td>
+            </tr>
+            <tr>
+                <td><b>COB Mode</b</td>
+                <td>@Model.Cob_modeString</td>
+            </tr>
+            <tr>
+                <td><b>Class</b</td>
+                @if (Model.Class != null)
+                {
+                    <td>@Model.Class</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>            
+            <tr>
+                <td><b>Open Date</b</td>
+                <td>@Model.Open_dt.ToString("yyyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <td><b>Inactive Date</b</td>
+                <td>@Model.Inactive_dt?.ToString("yyyy-MM-dd")</td>
+            </tr>
+            <tr>
+                <td><b>Inactive Reason</b</td>
+                <td>@Model.Inactive_reason</td>
+            </tr>
+            <tr>
+                <td><b>Close Date</b</td>
+                <td>@Model.Close_dt?.ToString("yyyy-MM-dd")</td>                
+            </tr>
+            <tr>
+                <td><b>Credit Expiry Date</b</td>
+                <td>@Model.Credit_exp_dt?.ToString("yyyy-MM-dd")</td>                
+            </tr>
+            <tr>
+                <td><b>Remark</b</td>
+                @if (Model.Remark != null)
+                {
+                    <td>@Model.Remark</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Daily Statement Copies</b</td>
+                <td>@Model.Daily_stat_copies</td>                
+            </tr>
+            <tr>
+                <td><b>Monthly Statement Copies</b</td>
+                <td>@Model.Monthly_stat_copies</td>                
+            </tr>
+            <tr>
+                <td><b>Contract Note Copies</b</td>
+                <td>@Model.Contract_note_copies</td>                
+            </tr>
+            <tr>
+                <td><b>Status</b</td>
+                <td>@Model.StatusString</td>
+            </tr>     
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="Document" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="AdditionalInfo" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+    
+    <div id="BankAccount" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="OverseaBankAccount" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="Phone" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="Email" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="Address" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="Limit" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="HKIDR" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="Market" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="SocialMedia" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="NorthBound" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbNorthBoundInfo" border="1" cellspacing=0 cellpadding=7>
+            <tr>
+                <td colspan="2"><div><b>@Model.Cms_client_account.Cms_account.AccNo > North Bound Information</b></div></td>
+            </tr>
+            <tr>
+                <td><b>Consent</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.Consent</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr> 
+            <tr>
+                <td><b>Type</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.TypeString</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Start BCAN</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.Start_bcan</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>End BCAN</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.End_bcan</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Assigned Firm ID</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.Assigned_firm_id</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>TTEP Firm ID</b</td>
+                @if (Model.Cms_account_north_bound != null)
+                {
+                    <td>@Model.Cms_account_north_bound.Ttep_firm_id</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+        </table>
+    </div>
+    <br /><br />
+
+    <div id="ControllingPerson" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+
+    <div id="AuthParty" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+
+    <div id="CompanyStructure" class="tabcontent" style="display: none;">
+        <div class="content"></div>
+    </div>
+    <br /><br />
+    <br /><br />
+
+    <div id="W8" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbW8" border="1" cellspacing=0 cellpadding=7>
+            <tr>
+                <td colspan="2"><div><b>@Model.Cms_client_account.Cms_account.AccNo > W8 Form</b></div></td>
+            </tr>
+            <tr>
+                <td><b>1. Name of individual who is the beneficial owner</b></td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Name_of_bene_owner</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>2. Country of citizenship</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Country_of_citizenship</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>3. Permanent residence address (street, apt. or suite no., or rural route).</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Residence_addr1</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>  
+            <tr>
+                <td><b>City or town, state or province. Include postal code where appropriate.</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Residence_addr2</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Country</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Residence_country</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>4. mailing address (if different from above)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Mailing_addr1</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>City or town, state or province. Include postal code where appropriate.</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Mailing_addr2</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Country</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Mailing_country</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>5. U.S. taxpayer identification number (SSN or ITIN), if required (see instructions)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Mailing_addr2</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>6a. Foreign tax identifying number (see instructions)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Us_taxpayer_idnos</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>6b. Check if FTIN not legally required</b</td>
+                @if (Model.Cms_account_w8 != null)
+                { 
+                    <td>@Model.Cms_account_w8.Chk_FTIN_not_legally_req</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>7. Reference number(s) (see instructions)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Ref_nos</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>8. Date of birth (MM-DD-YYYY) (see instructions)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Dob</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>9. I certify that the beneficial owner is a resident of</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Treaty_claim_tax_country</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Special rates and conditions (if applicable - see instructions): The beneficial owner is claiming the provisions of Artical and paragraph</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Treaty_spec_rate_and_condition</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>of the treaty identified on line 9 above to claim a</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Treaty_percent</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>% rate of withholding on (specify type of income)</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Treaty_withholding_on</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>Explain the additional conditions in the Article and paragraph the beneficial owner meets to be eligible for the rate of withholding:</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Treaty_explain</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td><b>I certify that I have the capacity to sign for the person identified on line 1 of this form.</b</td>
+                @if (Model.Cms_account_w8 != null)
+                {
+                    <td>@Model.Cms_account_w8.Certify</td>
+                }
+                else {
+                    <td></td>
+                }
+            </tr>
+        </table>
+    </div>
+    <br /><br />
+    <div id="DKQ" class="tabcontent" style="display: none;">
+        <div><b>@Model.Cms_client_account.Cms_account.AccNo > DKQ</b></div><br />
+
+        如屬公司客戶,公司需確保所有投資決定人士擁有以下任何一項評估條件。<br />
+        Part 1. Criteria for Assessing a Client’s Knowledge of Derivatives<br />
+        第一部分評估客戶對衍生工具的認識的條件<br />
+        Do you meet any one of the following criteria?<br />
+        閣下是否符合以下任何一項評估條件?<br /><br />
+        Criteria: 條件<br />
+        (i) I/We have executed five or more transactions in derivative products (whether<br />
+        traded on an exchange or not), e.g. Stock Options, futures, Callable Bull/Bear<br />
+        Contracts, Derivative Warrants, Structured Products and ETFs, etc. (within the<br />
+        past 3 years)<br />
+        本人/我們(於過去三年)曾執行 5 次或以上有關衍生產品(不論是否<br />
+        在交易所買賣)的交易,例如:股票期權、期貨、牛熊證、衍生權證、結構性產<br />
+        品及交易所買賣基金等。<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.TrdExpOnexch_Yes == "Y")
+                {
+                    <input type="radio" name="option1" value="yes" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option1" value="yes" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option1" value="yes" disabled/>
+            }
+            Yes
+        </label>
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.TrdExpOnexch_No == "Y")
+                {
+                    <input type="radio" name="option1" value="no" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option1" value="no" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option1" value="no" disabled/>
+            }
+            No
+        </label><br /><br/>
+        Relevant Financial Institution 金融機構名稱:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.TrdExpOnexch_RelevantFinInst" readonly style="width: 300px;" /><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Product Type 產品種類:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.TrdExpOnexch_ProdType" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Trading Period 交易期間:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.TrdExpOnexch_TradingPeriod" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        (ii) I/We have current or previous work experience related to derivative products.<br />
+        本人/我們於現時或過去擁有與衍生產品的工作經驗。<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.WkExpOnDerProd_Yes == "Y")
+                {
+                    <input type="radio" name="option2" value="yes" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option2" value="yes" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option2" value="yes" disabled/>
+            }
+            Yes
+        </label>
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.WkExpOnDerProd_No == "Y")
+                {
+                    <input type="radio" name="option2" value="no" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option2" value="no" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option2" value="no" disabled/>
+            }
+            No
+        </label><br /><br/>        
+        Name of Employer 公司名稱:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.WkExpOnDerProd_Employer" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Department 部門名稱:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.WkExpOnDerProd_Employer" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Position 職位:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.WkExpOnDerProd_Pos" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Working Year 工作年期:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.WkExpOnDerProd_WorkingYear" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        (iii) I/We have undergone training and/or attended courses either in form of online<br />
+        or classroom offered by academic institutions or financial institutions on<br />
+        derivative and/or structured products.<br />
+        本人/我們已經接受及/或參加由學術機構<br />
+        或金融機構所提供有關衍生工具/或結構性產品的在線或教室形式培訓及/課程。<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.Training_Yes == "Y")
+                {
+                    <input type="radio" name="option3" value="yes" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option3" value="yes" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option3" value="yes" disabled/>
+            }
+            Yes
+        </label>
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (@Model.Cms_account_dkq.Training_Yes == "Y")
+                {
+                    <input type="radio" name="option3" value="no" checked disabled/>
+                }
+                else
+                {
+                    <input type="radio" name="option3" value="no" disabled/>
+                }
+            }
+            else
+            {
+                <input type="radio" name="option3" value="no" disabled/>
+            }
+            No
+        </label><br /><br/>
+        Name of Training/ Courses 相關培訓或課程名稱:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.Training_CoursesName" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Name of Organized Institution 舉辦機構名稱:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.Training_OrgInstName" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        Attendance Date 出席日期:<br />
+        @if (@Model.Cms_account_dkq != null)
+        {
+            <input type="text" value="@Model.Cms_account_dkq.Training_AttendanceDate.ToString("yyyy-MM-dd")" readonly style="width: 300px;"/><br/><br/>
+        }
+        else
+        {
+            <input type="text" readonly style="width: 300px;"/><br/><br/>
+        }
+        如屬公司客戶,公司需確保所有投資決定人士擁有以下任何一項評估條件。<br />
+        Part 2. Derivatives Knowledge Questionnaire (Applicable to Recommendation Only)<br />
+        第二部分 衍生工具認識問卷 (只適用於投資建議)<br /><br /><br />
+        If you have fulfilled one of the above criteria in Part 1, please complete the Derivatives Knowledge Questionnaire in Part 2 to evaluate your knowledge of derivatives. (Applicable to Recommendation Only)<br />
+        如閣下符合以上任何一項評估條件,請填妥以下第二部分之衍生工具認識問卷, 以評估客戶對衍生工具的認識。(只適用於投資建議)<br />
+        The Derivatives Knowledge Questionnaire enables us to understand whether you have general knowledge of the nature and risks of derivative under the regulatory requirement of investor characterization pursuant to paragraph 5.1A of the Code of Conduct for Persons Licensed by or Registered with the Securities and Futures Commission. Upon successful completion of Derivatives Knowledge Questionnaire and answer all questions correctly, you will be characterized as “Client having general knowledge of derivatives”.<br />
+        衍生工具認識問卷是為符合證監會持牌人或註 冊人操守準則第 5.1A 節所載的投資者分類的監管要求,以讓我們了解閣下是否對衍生產品的性質及風險有基本知識。當閣下完成衍生工具認識問 卷並答對以下所有問題,閣下將被分類為「對衍生工具有一般認識的客戶」。<br /><br />
+
+        (Please ✔ the appropriate box. 請在適當的空格填上✔ 號。)<br />
+        Q1. What is a derivative?<br />
+        問 1. 甚麼是衍生工具?<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.Whatisderivative_BankDeposit == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            A. Bank deposit 銀行存款
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.Whatisderivative_StkOrWithOwnership == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            B. A stock or any other security representing an ownership interest 附帶股權權益的股份或任何其他證券
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.Whatisderivative_Loan == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            C. A loan made to a company or a government body 向公司或政府機構提供的貸款
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.Whatisderivative_FinInstFmUndAsset == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            D. A financial instrument that derives its value from an underlying asset 其價值自相關資產衍生而來的金融工具
+        </label>
+        <br /><br />
+        Q2. Which of the followings is/are the risk(s) factors of derivatives?<br />
+        問 2. 下列哪一項是使用衍生工具涉及的風險?<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.DerRiskfactors_CptyRisk == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            A. Counterparty Risk 交易對手風險
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.DerRiskfactors_LiquidityRisk == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            B. Liquidity Risk 流動性風險
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.DerRiskfactors_MarketRisk == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            C. Market Risk 市場風險
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.DerRiskfactors_All == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            D. All of the above 以上皆是
+        </label>
+        <br /><br />
+        Q3. Which of the following is/are common type(s) of Futures in the market?<br />
+        問 3. 下列哪一項為市場常見的期貨種類?<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.TypesOfFutures_IndFut == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            A. Index Futures 指數期貨
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.TypesOfFutures_ComFut == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            B. Commodity Futures 商品期貨
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.TypesOfFutures_CcyFut == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            C. Currency Futures 外匯期貨
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.TypesOfFutures_All == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            D. All of the above 以上皆是
+        </label>
+        <br /><br />
+        Q4. Is “leveraging” a key feature of derivatives?<br />
+        問 4. 「槓桿效應」是否衍生工具的一個主要特點?<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.IslvgeDer_Yes == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            A. Yes 是
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.IslvgeDev_No == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            B. No 不是
+        </label>
+        <br /><br />
+        Q5. “The risk of loss in trading futures contracts or options is substantial. You may sustain losses in excess of your initial margin funds.” Is this sentence correct?<br />
+        問 5. “參與買賣期貨合約或期權的虧蝕風險可以極大。你所蒙受的虧蝕可能會超過最初存入的保證金數額。”這句子是否正確?<br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.LossInExcessInitMarginFunds_Yes == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            A. Yes 是
+        </label><br />
+        <label>
+            @if (@Model.Cms_account_dkq != null)
+            {
+                if (Model.Cms_account_dkq.LossInExcessInitMarginFunds_No == "Y")
+                {
+                    <input type="checkbox" checked disabled />
+                }
+                else
+                {
+                    <input type="checkbox" disabled />
+                }
+            }
+            else
+            {
+                <input type="checkbox" disabled />
+            }
+            B. No 不是
+        </label>
+    </div>
+    <br /><br />        
+    
+    <div id="MonthlySaving" class="tabcontent" style="display: none;">
+        <table class="formcontractterm" id="tbMthSavingPlanList" border="1" cellspacing=0 cellpadding=7>
+            <thead>
+                <tr>
+                    <td colspan="7"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Monthly Saving Plan</b></div></td>
+                </tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Market</th>
+                <th>Sec. Code</th>
+                <th>Sec. Name</th>
+                <th>Ccy</th>
+                <th>Investment Amount</th>
+            </thead>
+            <tbody>
+                @if (Model.Cms_account_mthsaving_plans != null)
+                {
+                    @foreach (var mthsaving_plan in Model.Cms_account_mthsaving_plans)
+                    {
+                        // Check if Cms_client_bank and its Cms_bank are not null
+                        <tr>
+                            <td>@mthsaving_plan.Eff_start_dt.ToString("yyyy-MM-dd")</td>
+                            <td>@mthsaving_plan.Eff_end_dt.ToString("yyyy-MM-dd")</td>
+                            <td>@mthsaving_plan.Mkt_code</td>
+                            <td>@mthsaving_plan.Sec_code</td>
+                            <td>@await Component.InvokeAsync("Securities", new { mktCode = mthsaving_plan.Mkt_code, secCode = mthsaving_plan.Sec_code })</td>
+                            <td>@mthsaving_plan.Ccy</td>
+                            <td>@mthsaving_plan.Invest_amt.ToString("N2")</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+    
+<script>
+    var modelId = @Model.Id;
+    sessionStorage.setItem('account_modelId', modelId);
+
+    var dataLoaded = {}; // Object to track loaded data for each tab
+
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";  
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";  
+        evt.currentTarget.className += " active";
+    }
+
+    function openTab_url(evt, tabName, url) {
+        // Get all elements with class="tabcontent" and hide them
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab and add an "active" class to the button that opened the tab
+        var currentTab = document.getElementById(tabName);
+        currentTab.style.display = "block";  
+        evt.currentTarget.className += " active";
+        
+        // Load data if not already loaded
+        if (!dataLoaded[tabName]) {  
+            var storedId = sessionStorage.getItem('account_modelId');
+            url = url + "/" + storedId;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    // Assuming data is an HTML string or JSON that needs to be formatted
+                    currentTab.querySelector('.content').innerHTML = formatData(data, tabName);
+                    dataLoaded[tabName] = true; // Mark this tab as loaded
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                    currentTab.querySelector('.content').innerHTML = 'Error loading data.';
+                });
+        }
+
+        dataLoaded[tabName] = false;
+    }
+
+    // Function to format the data for display (modify as needed)
+    function formatData(data, tabName) {
+        // Main account information table
+        let mainTable = '<table>';
+        mainTable += '<thead><tr>';
+    
+        Object.keys(data).forEach(key => {
+            if (!Array.isArray(data[key])) { // Avoid arrays for now
+                mainTable += `<th>${key}</th>`;
+            }
+        });
+        mainTable += '</tr></thead><tbody>';
+    
+        mainTable += '<tr>';
+        Object.values(data).forEach(value => {
+            if (!Array.isArray(value)) {
+                mainTable += `<td>${value}</td>`;
+            }
+        });
+        let returnText = '';
+        
+        if (tabName == "AdditionalInfo") {
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            // Additional information table
+            let additionalInfos = data.cms_account_additionalinfos;
+            let additionalTable = '';
+            additionalTable += '<table class="formcontractterm" id="tbAdditionalInfo" border="1" cellspacing=0 cellpadding=7>';
+            additionalTable += '<thead><tr><td colspan="2"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Additional Information</b></div></td></tr><th>Info Name</th><th>Info Value</th></thead><tbody>';
+
+            if (additionalInfos.length > 0) {
+                additionalInfos.forEach(info => {
+                    const info_spec = info.cms_additionalinfo;
+
+                    additionalTable += '<tr>';
+                    additionalTable += `<td>${info_spec.name}</td>`;
+                    additionalTable += `<td>${info.value}</td>`;
+                    additionalTable += '</tr>';
+                });
+            } else {
+                additionalTable += '<tr><td colspan="2">No additional information available.</td></tr>';
+            }
+
+            additionalTable += '</tbody></table>';
+            returnText = additionalTable;
+        }
+        else if (tabName == "BankAccount") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let banks = data.cms_account_banks.filter(bank => bank.cms_client_bank.status === 'A' && bank.cms_client_bank.type === '0')
+            let bankTable = '';
+            bankTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            bankTable += '<thead><tr><td colspan="8"><div><b>@Model.Cms_client_account.Cms_account.AccNo > HKD Bank Accounts</b></div></td></tr><th>Bank Code</th><th>Bank Name</th><th>Bank Account Name</th><th>Bank Ccy</th><th>Bank Account Number</th><th>Payment Type</th><th>Default HKD Bank</th><th>Status</th></thead><tbody>';
+
+            if (banks && banks.length > 0) {
+                banks.forEach(bank => {
+                    const clientbank = bank.cms_client_bank;
+                    
+                    bankTable += '<tr>';
+                    bankTable += `<td>${clientbank.cms_bank.bank_code}</td>`;
+                    bankTable += `<td>${clientbank.cms_bank.bank_name}</td>`;
+                    bankTable += `<td>${clientbank.bank_accname}</td>`;
+                    bankTable += `<td>${clientbank.ccy}</td>`;
+                    bankTable += `<td>${clientbank.bank_accno}</td>`;
+                    bankTable += `<td>${clientbank.default_payment_type_string}</td>`;
+                    bankTable += `<td>${bank.defaultLocalHKDBankString}</td>`;
+                    bankTable += `<td>${clientbank.statusString}</td>`;
+                    bankTable += '</tr>';
+                });
+            } else {
+                bankTable += '<tr><td colspan="8">No HKD Bank Accounts.</td></tr>';
+            }
+
+            bankTable += '</tbody></table>';
+            returnText = bankTable;
+        }
+
+        else if (tabName == "OverseaBankAccount") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let banks = data.cms_account_banks.filter(bank => bank.cms_client_bank.status === 'A' && bank.cms_client_bank.type === '1')
+            let bankTable = '';
+            bankTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            bankTable += '<thead><tr><td colspan="16"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Non-HKD Bank Accounts</b></div></td></tr><th>Beneficiary Bank Country</th><th>Beneficiary Bank Name</th><th>Beneficiary Bank Code</th><th>Beneficiary Swift Code</th><th>Beneficiary Bank Address</th><th>Beneficiary Account Name</th><th>Beneficiary Account Number</th><th>Beneficiary Account Ccy</th><th>Correspondent Bank Country</th><th>Correspondent Bank Name</th><th>Correspondent Bank Code</th><th>Correspondent Swift Code</th><th>Message to Bank</th><th>Payment Type</th><th>Status</th></thead><tbody>';
+
+            if (banks && banks.length > 0) {
+                banks.forEach(bank => {
+                    const clientbank = bank.cms_client_bank;
+                    
+                    bankTable += '<tr>';
+                    bankTable += `<td>${clientbank.bene_bank_country}</td>`;
+                    bankTable += `<td>${clientbank.bene_bank_name}</td>`;
+                    bankTable += `<td>${clientbank.bene_bank_code}</td>`;
+                    bankTable += `<td>${clientbank.bene_bank_swift}</td>`;
+                    bankTable += `<td>${clientbank.bene_bank_address}</td>`;
+                    bankTable += `<td>${clientbank.bene_bank_accname}</td>`;
+                    bankTable += `<td>${clientbank.bank_accno}</td>`;
+                    bankTable += `<td>${clientbank.ccy}</td>`;
+                    bankTable += `<td>${clientbank.corr_bank_country}</td>`;
+                    bankTable += `<td>${clientbank.corr_bank_name}</td>`;
+                    bankTable += `<td>${clientbank.corr_bank_code}</td>`;
+                    bankTable += `<td>${clientbank.corr_bank_swift}</td>`;
+                    bankTable += `<td>${clientbank.msg_to_bank}</td>`;
+                    bankTable += `<td>${clientbank.default_payment_type_string}</td>`;
+                    bankTable += `<td>${clientbank.statusString}</td>`;
+                    bankTable += '</tr>';
+                });
+            } else {
+                bankTable += '<tr><td colspan="9">No Non-HKD Bank Accounts.</td></tr>';
+            }
+
+            bankTable += '</tbody></table>';
+            returnText = bankTable;
+        }
+
+        else if (tabName == "Phone") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let phones = data.cms_account_phones;
+            let phoneTable = '';
+            phoneTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            phoneTable += '<thead><tr><td colspan="9"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Phones</b></div></td></tr><th>Type</th><th>SubType</th><th>Country Code</th><th>Area Code</th><th>Phone Number</th></thead><tbody>';
+
+            if (phones && phones.length > 0) {
+                phones.forEach(phone => {
+                    const clientphone = phone.cms_client_phone;
+                    
+                    phoneTable += '<tr>';
+                    phoneTable += `<td>${clientphone.typeString}</td>`;
+                    phoneTable += `<td>${clientphone.subTypeString}</td>`;
+                    phoneTable += `<td>${clientphone.country_code}</td>`;
+                    phoneTable += `<td>${clientphone.area_code}</td>`;
+                    phoneTable += `<td>${clientphone.value}</td>`;
+                    phoneTable += '</tr>';
+                });
+            } else {
+                phoneTable += '<tr><td colspan="9">No Phones.</td></tr>';
+            }
+
+            phoneTable += '</tbody></table>';
+            returnText = phoneTable;
+        }
+
+        else if (tabName == "Email") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let emails = data.cms_account_emails;
+            let emailTable = '';
+            emailTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            emailTable += '<thead><tr><td colspan="9"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Emails</b></div></td></tr><th>Type</th><th>Email</th></thead><tbody>';
+
+            if (emails && emails.length > 0) {
+                emails.forEach(email => {
+                    const clientemail = email.cms_client_email;
+                    
+                    emailTable += '<tr>';
+                    emailTable += `<td>${clientemail.typeString}</td>`;
+                    emailTable += `<td>${clientemail.email}</td>`;
+                    emailTable += '</tr>';
+                });
+            } else {
+                emailTable += '<tr><td colspan="9">No Emails.</td></tr>';
+            }
+
+            emailTable += '</tbody></table>';
+            returnText = emailTable;
+        }
+
+        else if (tabName == "Address") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let addresses = data.cms_account_addresses;
+            let addressTable = '';
+            addressTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            addressTable += '<thead><tr><td colspan="9"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Addresses</b></div></td></tr><th>Type</th><th>Address 1</th><th>Address 2</th><th>Address 3</th><th>Address 4</th><th>Country</th></thead><tbody>';
+
+            if (addresses && addresses.length > 0) {
+                addresses.forEach(address => {
+                    const clientaddress = address.cms_client_address;
+                    
+                    addressTable += '<tr>';
+                    addressTable += `<td>${clientaddress.typeString}</td>`;
+                    addressTable += `<td>${clientaddress.addr1}</td>`;
+                    addressTable += `<td>${clientaddress.addr2}</td>`;
+                    addressTable += `<td>${clientaddress.addr3}</td>`;
+                    addressTable += `<td>${clientaddress.addr4}</td>`;
+                    addressTable += `<td>${clientaddress.country}</td>`;
+                    addressTable += '</tr>';
+                });
+            } else {
+                addressTable += '<tr><td colspan="6">No Emails.</td></tr>';
+            }
+
+            addressTable += '</tbody></table>';
+            returnText = addressTable;
+        }
+
+        else if (tabName == "Limit") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let limits = data.cms_account_limits;
+            let limitTable = '';
+            limitTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            limitTable += '<thead><tr><td colspan="6"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Limits</b></div></td></tr><th>Type</th><th>Ccy</th><th>Limit Amount</th><th>Limit %</th><th>Limit Expiry Date</th><th>Status</th></thead><tbody>';
+
+            if (limits.length > 0) {
+                limits.forEach(limit => {
+                    limitTable += '<tr>';
+                    limitTable += `<td>${limit.typeString}</td>`;
+                    limitTable += `<td>${limit.ccy}</td>`;
+                    limitTable += `<td>${limit.lmt.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>`;
+                    limitTable += `<td>${(limit.pct * 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>`;
+                    limitTable += `<td>${formatDate(limit.exp_dt)}</td>`;
+                    limitTable += `<td>${limit.statusString}</td>`;
+                    limitTable += '</tr>';
+                });
+            } else {
+                limitTable += '<tr><td colspan="6">No Limits.</td></tr>';
+            }
+
+            limitTable += '</tbody></table>';
+            returnText = limitTable;
+        }
+
+        else if (tabName == "Market") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let markets = data.cms_account_markets;
+            let marketTable = '';
+            marketTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            marketTable += '<thead><tr><td colspan="9"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Markets</b></div></td></tr><th>Market Code</th><th>Cheque Net Off</th><th>AE</th><th>Bank Code</th><th>Bank Account No.</th><th>Bank For Hold Fund</th><th>Settlement Method</th><th>Clearing Counterparty</th><th>Clearing Trading Account</th></thead><tbody>';
+
+            if (markets.length > 0) {
+                markets.forEach(market => {
+                    marketTable += '<tr>';
+                    marketTable += `<td><a href="/AccountMarket/accountmarkets/${market.id}">${market.mkt_code}</a></td>`;
+                    marketTable += `<td>${market.chqnetoffString}</td>`;
+                    marketTable += `<td>${market.aecode}</td>`;
+                    marketTable += `<td>${market.cms_account_bank.cms_client_bank.cms_bank.bank_code}</td>`;
+                    marketTable += `<td>${market.cms_account_bank.cms_client_bank.bank_accno}</td>`;
+                    marketTable += `<td>${market.bank_for_holdfundString}</td>`;
+                    marketTable += `<td>${market.sett_mtdString}</td>`;
+                    marketTable += `<td>${market.clearing_cparty_pid}</td>`;
+                    marketTable += `<td>${market.clearing_clnt_acc}</td>`;
+                    marketTable += '</tr>';
+                });
+            } else {
+                marketTable += '<tr><td colspan="9">No Markets.</td></tr>';
+            }
+
+            marketTable += '</tbody></table>';
+            returnText = marketTable;
+        }
+
+        else if (tabName == "SocialMedia") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let socialmedias = data.cms_account_social_medias;
+            let socialmediaTable = '';
+            socialmediaTable += '<table class="formcontractterm" id="tbSocialMediaList" border="1" cellspacing=0 cellpadding=7>';
+            socialmediaTable += '<thead><tr><td colspan="9"><div><b>@Model.AccNo > Social Medias</b></div></td></tr><th>Type</th><th>Name</th><th>No.</th></thead><tbody>';
+
+            if (socialmedias.length > 0) {
+                socialmedias.forEach(socialmedia => {
+                    socialmediaTable += '<tr>';
+                    socialmediaTable += `<td>${socialmedia.typeString}</td>`;
+                    socialmediaTable += `<td>${socialmedia.name}</td>`;
+                    socialmediaTable += `<td>${socialmedia.no}</td>`;
+                    socialmediaTable += '</tr>';
+                });
+            } else {
+                socialmediaTable += '<tr><td colspan="9">No Social Medias.</td></tr>';
+            }
+
+            socialmediaTable += '</tbody></table>';
+            returnText = socialmediaTable;
+        }  
+
+        else if (tabName == "ControllingPerson") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+            let controllingpersons = data.cms_account_controlling_persons;
+            let controllingpersonTable = '';
+            controllingpersonTable += '<table class="formcontractterm" id="tbControllingPersonList" border="1" cellspacing=0 cellpadding=7>';
+            controllingpersonTable += '<thead><tr><td colspan="7"><div><b>@Model.AccNo > Controlling Persons</b></div></td></tr><th>Issuing Jurisdiction</th><th>TIN</th><th>DOB</th><th>First Name</th><th>Middle Name</th><th>Surname</th><th>Type</th></thead><tbody>';
+
+            if (controllingpersons.length > 0) {
+                controllingpersons.forEach(controllingperson => {
+                    controllingpersonTable += '<tr>';
+                    controllingpersonTable += `<td>${controllingperson.issuing_jurisdiction}</td>`;
+                    controllingpersonTable += `<td>${controllingperson.tin}</td>`;
+                    controllingpersonTable += `<td>${new Date(controllingperson.dob).toISOString().split('T')[0]}</td>`;
+                    controllingpersonTable += `<td>${controllingperson.first_name}</td>`;
+                    controllingpersonTable += `<td>${controllingperson.middle_name}</td>`;
+                    controllingpersonTable += `<td>${controllingperson.surname}</td>`;
+                    controllingpersonTable += `<td>${controllingperson.type}</td>`;
+                    controllingpersonTable += '</tr>';                    
+                });
+            } else {
+                controllingpersonTable += '<tr><td colspan="9">No Controlling Persons.</td></tr>';
+            }
+            controllingpersonTable += '</tbody></table>';
+            returnText = controllingpersonTable;
+        }
+
+        else if (tabName == "AuthParty") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+            let authparties = data.cms_account_auth_parties;
+            let authpartieTable = '';
+            authpartieTable += '<table class="formcontractterm" id="tbAuthPartyList" border="1" cellspacing=0 cellpadding=7>';
+            authpartieTable += '<thead><tr><td colspan="2"><div><b>@Model.AccNo > Authorized Parties</b></div></td></tr><th>Name</th><th>Relationship</th></thead><tbody>';
+
+            if (authparties.length > 0) {
+                authparties.forEach(authparty => {
+                    authpartieTable += '<tr>';
+                    authpartieTable += `<td>${authparty.name}</td>`;
+                    authpartieTable += `<td>${authparty.relationship}</td>`;
+                    authpartieTable += '</tr>';                    
+                }); 
+
+            } else {
+                authpartieTable += '<tr><td colspan="9">No Authorized Parties.</td></tr>';
+            }
+            authpartieTable += '</tbody></table>';
+            returnText = authpartieTable;
+        }
+
+        else if (tabName == "CompanyStructure") { 
+            let companystructure = data.cms_account_company_structure;
+            let companystructureTable = '';
+
+            companystructureTable += `<table class="formcontractterm" id="tbCompanyStructureList" border="1" cellspacing=0 cellpadding=7>`;
+            companystructureTable += `<thead><tr><td colspan="2"><div><b>@Model.AccNo > Company Structure</b></div></td></tr></thead><tbody>`;                
+            if (companystructure != null) {
+                companystructureTable += `<tr>`;
+                companystructureTable += `<td><b>Financial Institution SubCategory</b></td>`;
+                companystructureTable += `<td>${companystructure.financialInstitutionSubCatString}</td>`;
+                companystructureTable += `</tr>`;
+                companystructureTable += `<tr>`;
+                companystructureTable += `<td><b>Non-financial Institution SubCategory</b></td>`;
+                companystructureTable += `<td>${companystructure.nonFinancialInstitutionSubCatString}</td>`;
+                companystructureTable += `</tr>`;
+                companystructureTable += `<tr>`;
+                companystructureTable += `<td><b>Place of Regulatory</b></td>`;
+                companystructureTable += `<td>${companystructure.placeOfRegulatory}</td>`;
+                companystructureTable += `</tr>`;
+            } else {
+                companystructureTable += `<tr><td colspan="9">No Company Structure.</td></tr>`;
+            }
+            companystructureTable += '</tbody></table>';
+            companystructureTable += '<br/><br/>';
+
+
+            if (companystructure != null) {
+                let companystructure_directors = companystructure.cms_account_company_structure_directors;
+
+                companystructureTable += '<table class="formcontractterm" id="tbCompanyStructureDirectorList" border="1" cellspacing=0 cellpadding=7>';
+                companystructureTable += '<thead><tr><td colspan="9"><div><b>@Model.AccNo > Directors</b></div></td></tr><th>English name</th><th>Chinese name</th><th>Gender</th><th>Date of Birth/ Date of Incorporation</th><th>ID Type</th><th>ID No.</th><th>Nationality/ Place of Incorporation</th><th>Effective Date</th><th>Remarks</th></thead><tbody>';
+
+                if (companystructure_directors.length > 0) {
+                    companystructure_directors.forEach(companystructure_director => {
+                        companystructureTable += '<tr>';
+                        companystructureTable += `<td>${companystructure_director.ename}</td>`;
+                        companystructureTable += `<td>${companystructure_director.cname}</td>`;
+                        companystructureTable += `<td>${companystructure_director.gender}</td>`;
+                        companystructureTable += `<td>${new Date(companystructure_director.init_dt).toISOString().split('T')[0]}</td>`;
+                        companystructureTable += `<td>${companystructure_director.id_typeString}</td>`;
+                        companystructureTable += `<td>${companystructure_director.id_no}</td>`;
+                        companystructureTable += `<td>${companystructure_director.nationality_or_place}</td>`;
+                        companystructureTable += `<td>${new Date(companystructure_director.effective_date).toISOString().split('T')[0]}</td>`;
+                        companystructureTable += `<td>${companystructure_director.remarks}</td>`;
+                        companystructureTable += '</tr>';
+                    });
+                } else {
+                    companystructureTable += '<tr><td colspan="9">No Directors.</td></tr>';
+                }
+                companystructureTable += '</tbody></table>';
+                companystructureTable += '<br/><br/>';
+            }
+
+            if (companystructure != null) {
+                let companystructure_shareholders = companystructure.cms_account_company_structure_shareholders;
+
+                companystructureTable += '<table class="formcontractterm" id="tbCompanyStructureShareHolderList" border="1" cellspacing=0 cellpadding=7>';
+                companystructureTable += '<thead><tr><td colspan="10"><div><b>@Model.AccNo > Shareholders</b></div></td></tr><th>English name</th><th>Chinese name</th><th>Gender</th><th>Date of Birth/ Date of Incorporation</th><th>ID Type</th><th>ID No.</th><th>Nationality/ Place of Incorporation</th><th>Type</th><th>Effective Date</th><th>Remarks</th></thead><tbody>';
+
+                if (companystructure_shareholders.length > 0) {
+                    companystructure_shareholders.forEach(companystructure_shareholder => {
+                        companystructureTable += '<tr>';
+                        companystructureTable += `<td>${companystructure_shareholder.ename}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.cname}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.gender}</td>`;
+                        companystructureTable += `<td>${new Date(companystructure_shareholder.init_dt).toISOString().split('T')[0]}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.id_typeString}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.id_no}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.nationality_or_place}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.typeString}</td>`;
+                        companystructureTable += `<td>${new Date(companystructure_shareholder.effective_date).toISOString().split('T')[0]}</td>`;
+                        companystructureTable += `<td>${companystructure_shareholder.remarks}</td>`;
+                        companystructureTable += '</tr>';
+                    });
+                } else {
+                    companystructureTable += '<tr><td colspan="9">No Shareholders.</td></tr>';
+                }
+                companystructureTable += '</tbody></table>';
+                companystructureTable += '<br/><br/>';
+            }
+
+            if (companystructure != null) {
+                let companystructure_intermediaries = companystructure.cms_account_company_structure_intermediaries;
+
+                companystructureTable += '<table class="formcontractterm" id="tbCompanyStructureIntermediaryList" border="1" cellspacing=0 cellpadding=7>';
+                companystructureTable += '<thead><tr><td colspan="5"><div><b>@Model.AccNo > Intermediaries</b></div></td></tr><th>English name</th><th>Chinese name</th><th>Place of Incorporation</th><th>Effective Date</th><th>Remarks</th></thead><tbody>';
+
+                if (companystructure_intermediaries.length > 0) {
+                    companystructure_intermediaries.forEach(companystructure_intermediary => {
+                        companystructureTable += '<tr>';
+                        companystructureTable += `<td>${companystructure_intermediary.ename}</td>`;
+                        companystructureTable += `<td>${companystructure_intermediary.cname}</td>`;
+                        companystructureTable += `<td>${companystructure_intermediary.place_of_incorpration}</td>`;
+                        companystructureTable += `<td>${new Date(companystructure_intermediary.effective_date).toISOString().split('T')[0]}</td>`;
+                        companystructureTable += `<td>${companystructure_intermediary.remarks}</td>`;
+                        companystructureTable += '</tr>';
+                    });
+                } else {
+                    companystructureTable += '<tr><td colspan="9">No Intermediaries.</td></tr>';
+                }
+                companystructureTable += '</tbody></table>';
+                companystructureTable += '<br/><br/>';
+            }
+
+            returnText = companystructureTable;
+        }
+        
+        else if (tabName == "HKIDR") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let item = data.cms_account_hkidr;
+            let itemTable = '';
+            itemTable += '<label>Date:';
+
+            if (item != null) {
+                itemTable += `<input type="text" value="${formatDate(item.dt)}" readonly />`;
+            } else {
+                itemTable += `<input type="text" readonly />`;
+            }
+
+            returnText = itemTable;
+        } 
+
+        else if (tabName == "Document") { 
+            mainTable += '</tr>';
+            mainTable += '</tbody></table>';
+
+            let docs = data.cms_account_docs;
+            let docTable = '';
+            docTable += '<table class="formcontractterm" id="tbBankAccList" border="1" cellspacing=0 cellpadding=7>';
+            docTable += '<thead><tr><td colspan="6"><div><b>@Model.Cms_client_account.Cms_account.AccNo > Documents</b></div></td></tr><th>Type</th><th>Copies</th><th>Hold</th></thead><tbody>';
+
+            if (docs.length > 0) {
+                docs.forEach(doc => {
+                    docTable += '<tr>';
+                    docTable += `<td>${doc.typeString}</td>`;
+                    docTable += `<td>${doc.copies}</td>`;
+                    docTable += `<td>${doc.holdString}</td>`;
+                    docTable += '</tr>';
+                });
+            } else {
+                docTable += '<tr><td colspan="6">No Documents.</td></tr>';
+            }
+
+            docTable += '</tbody></table>';
+            returnText = docTable;
+        }
+
+        return returnText;
+    }
+
+    function formatDate(date) {
+        if (!date) return 'N/A';
+
+        const date_object = new Date(date);
+        const year = date_object.getFullYear();
+        const month = String(date_object.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const day = String(date_object.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+</script>

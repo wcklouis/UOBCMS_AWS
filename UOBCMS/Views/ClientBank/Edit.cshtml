@@ -1,0 +1,38 @@
+﻿@model UOBCMS.Models.api.body_cms_client_bank
+
+<h2>Edit Bank Account</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.HiddenFor(m => m.Id) <!-- Optionally include the ID if needed for the update -->
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bank_name, "Bank Name")
+        @Html.TextBoxFor(m => m.Bank_accname, new { @class = "form-control", @readonly = "readonly" }) <!-- Example of read-only input -->
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Bank_accno, "Bank Account Number")
+        @Html.TextBoxFor(m => m.Bank_accno, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ccy, "Bank Ccy")
+        @Html.TextBoxFor(m => m.Ccy, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Default_payment_type, "Default Payment Type")
+        @Html.DropDownListFor(m => m.Default_payment_type,
+                 (IEnumerable<SelectListItem>)ViewBag.PaymentTypes,
+                 "Select Payment Type",
+                 new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DefaultLocalHKDBank, "Default Local HKD Bank")
+        @Html.TextBoxFor(m => m.DefaultLocalHKDBank, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="button" class="btn btn-secondary" onclick="window.history.back();">Cancel</button>
+</form>

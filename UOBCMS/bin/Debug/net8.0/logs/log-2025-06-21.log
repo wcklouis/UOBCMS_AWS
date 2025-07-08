@@ -1,0 +1,28 @@
+2025-06-21 22:49:10,939 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:49:10,982 [6] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:50:12,268 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOUserContact		Account Code: 194419-001M
+2025-06-21 22:50:24,791 [6] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:50:24,792 [24] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:50:40,195 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:50:40,196 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:50:46,634 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:50:46,635 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:51:06,876 [18] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:51:06,878 [25] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:52:40,791 [30] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:52:40,793 [30] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 194419-001M
+2025-06-21 22:52:47,722 [29] INFO  UOBCMS.Classes.Logger - AccountController\SaveBulkAddress		UOBCMS.Models.api.body_cms_client_address
+2025-06-21 22:52:47,868 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:52:47,873 [27] INFO  UOBCMS.Classes.Logger - AccountController\SaveBulkAddress		UOBCMS.Models.api.body_cms_client_address
+2025-06-21 22:52:47,959 [29] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-21 22:52:55,532 [32] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-21 22:52:58,621 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-06-21 22:52:59,490 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-21 22:52:59,515 [29] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-21 22:52:59,536 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-21 22:52:59,554 [33] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-06-21 22:52:59,571 [33] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-21 22:52:59,583 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-21 22:52:59,590 [30] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-06-21 22:52:59,598 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-06-21 22:52:59,608 [33] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found

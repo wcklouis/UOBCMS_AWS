@@ -1,0 +1,149 @@
+﻿#gridContainer {
+    margin: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.master-detail-caption {
+    padding: 10px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+
+
+.options {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(191, 191, 191, 0.15);
+    position: relative;
+}
+
+.caption {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.option-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.option {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.option-caption {
+    white-space: nowrap;
+    margin: 0 8px;
+}
+
+/* Custom styles for grid cells */
+.custom-grid-cell {
+    font-family: Arial, sans-serif; /* Set the desired font family */
+    font-size: 14px; /* Set the desired font size */
+    color: #333; /* Set the desired text color */
+}
+
+/* Custom CSS for DataGrid */
+.custom-data-grid .dx-datagrid-content {
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.custom-data-grid .dx-datagrid-header-row {
+    font-size: 16px; /* Header font size */
+}
+
+.formcontractterm {
+    text-align: left;
+    line-height: 40px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #2a3439;
+    width: 100%;    
+    margin: 0px auto;
+    border-radius: .35rem;
+}
+
+.formcontractterm td {
+    vertical-align: top;
+    width: 10%;
+}
+
+
+.formListing {
+    text-align: left;
+    line-height: 40px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #2a3439;
+    width: 100%;
+    margin: 0px auto;
+    border-radius: .35rem;
+}
+
+.formListing thead tr:first-child {
+    background: rgb(231, 231, 231);
+    color: #2a3439;
+    border: none;
+}
+
+.formListing th:first-child,
+.formListing td:first-child {
+    padding: 0 15px 0 20px;
+}
+
+.formListing th {
+    font-weight: 500;
+}
+
+.formListing thead tr:last-child th {
+    border-bottom: 2px solid #ddd;
+}
+
+.formListing tbody tr:hover {
+    background-color: #f2f2f2;
+    cursor: default;
+}
+
+.formListing tbody tr:last-child td {
+    border: none;
+}
+
+.formListing tbody td {
+    border-bottom: 1px solid #ddd;
+    line-height: 1.5;
+    padding: 8px 0px;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.formListing td:last-child {
+    /* text-align: right; */
+    padding-right: 10px;
+}
+
+.formListing .button {
+    color: #aaa;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.formListing th,
+.formListing td {
+    vertical-align: middle; /* Center content vertically in table cells */
+}
+
+
+.edit svg path,
+.delete svg path {
+    fill: rgba(0, 0, 0, 1); /* Default fill color */
+    transition: fill 0.3s; /* Smooth transition */
+}
+
+.formListing .edit:hover svg path {
+    fill: #0a79df; /* Change color on hover for edit */
+}

@@ -1,0 +1,45 @@
+2025-04-25 09:30:06,240 [26] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 100015-001 is found
+2025-04-25 09:30:06,282 [27] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 100015-001
+2025-04-25 09:32:48,434 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-25 09:32:50,746 [39] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:32:50,761 [39] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:32:50,770 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:32:50,777 [39] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:32:50,807 [39] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:32:50,819 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:32:50,827 [39] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:32:50,837 [41] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:32:50,847 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:33:38,912 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:33:55,637 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:33:55,646 [46] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:33:55,659 [46] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:33:55,668 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:33:55,677 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:33:55,684 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:33:55,692 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:33:55,700 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:33:55,708 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:34:06,366 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:34:17,564 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:34:17,573 [46] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:34:17,583 [46] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:34:17,592 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-25 09:34:17,603 [47] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:34:17,608 [45] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:34:17,614 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-25 09:34:17,621 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:34:17,628 [48] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-25 09:50:09,568 [103] ERROR UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 464456-001 is not found
+2025-04-25 09:51:41,030 [114] ERROR UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 41215455 is not found
+2025-04-25 09:51:59,158 [111] ERROR UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 41215455 is not found
+2025-04-25 09:53:15,539 [122] ERROR UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 41215455 is not found
+2025-04-25 11:15:43,494 [175] ERROR UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: CLWONG2 is not found
+2025-04-25 11:16:48,918 [169] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 100015-001 is found
+2025-04-25 11:16:48,929 [170] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 100015-001
+2025-04-25 11:17:35,851 [171] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 100015-001 is found
+2025-04-25 11:17:35,853 [171] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 100015-001
+2025-04-25 11:30:35,977 [44] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 100015-001 is found
+2025-04-25 11:30:35,981 [44] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 100015-001
+2025-04-25 11:32:51,446 [33] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 100015-001 is found
+2025-04-25 11:32:51,447 [33] INFO  UOBCMS.Classes.Logger - AccountController\GetIBOAccountCRS		Account Code: 100015-001

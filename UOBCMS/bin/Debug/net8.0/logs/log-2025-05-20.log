@@ -1,0 +1,16 @@
+2025-05-20 13:27:30,597 [6] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-05-20 13:27:32,264 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAuthParties		Authroized Parties of Account: 8703 is found
+2025-05-20 13:27:36,946 [21] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:38:11,398 [13] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-05-20 13:38:13,060 [13] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:38:41,315 [10] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-05-20 13:38:42,692 [14] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:40:58,903 [10] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-05-20 13:41:00,001 [4] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:41:46,211 [13] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-05-20 13:41:47,459 [13] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:48:19,574 [35] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAuthParties		Authroized Parties of Account: 8703 is found
+2025-05-20 13:48:22,776 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountControllingPersons		Controlling Persons of Account: 8703 is found
+2025-05-20 13:48:23,467 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAuthParties		Authroized Parties of Account: 8703 is found
+2025-05-20 13:48:25,936 [37] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountCompanyStructure		Company Structure of Account: 8703 is found
+2025-05-20 13:50:06,641 [46] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAuthParties		Authroized Parties of Account: 8703 is found

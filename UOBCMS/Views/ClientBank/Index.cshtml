@@ -1,0 +1,143 @@
+﻿@model IEnumerable<UOBCMS.Models.cms_client_bank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ccy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank_accno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank_accname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bene_bank_swift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bene_bank_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bene_bank_accname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bene_bank_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Corr_bank_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Corr_bank_swift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Default_payment_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Other_bank_details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastupdateuserid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastupdatedatetime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dbopr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cms_client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cms_bank)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ccy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bank_accno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bank_accname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bene_bank_swift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bene_bank_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bene_bank_accname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bene_bank_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Corr_bank_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Corr_bank_swift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Default_payment_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Other_bank_details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastupdateuserid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastupdatedatetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dbopr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cms_client.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cms_bank.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

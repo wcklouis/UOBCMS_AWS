@@ -1,0 +1,5 @@
+2025-04-28 16:48:41,245 [28] INFO  UOBCMS.Classes.Logger - AccountController\Details		Details of Account: 8703 is found
+2025-04-28 16:48:42,840 [29] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountSocialMedias		Socal Media of Account: 8703 is found
+2025-04-28 16:48:44,353 [25] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountMarkets		Market of Account: 8703 is found
+2025-04-28 16:48:45,672 [28] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountLimits		Limit of Account: 8703 is found
+2025-04-28 16:48:48,005 [25] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddresses		Account Address of Account: 8703 is found

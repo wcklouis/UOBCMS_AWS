@@ -1,0 +1,28 @@
+2025-04-16 10:35:20,184 [20] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 10:35:20,231 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 10:35:25,311 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:35:25,344 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:35:25,353 [19] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:35:25,363 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:35:25,412 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:35:25,426 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:35:25,433 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:35:25,482 [3] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-16 10:35:25,496 [10] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-16 10:53:59,844 [90] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:54:03,194 [89] INFO  UOBCMS.Classes.Logger - AccountController\SaveBulkPhone		UOBCMS.Models.api.body_cms_client_phone
+2025-04-16 10:54:03,396 [93] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:54:11,859 [90] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 10:54:11,866 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 10:54:14,264 [90] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:54:14,271 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:54:14,279 [90] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:54:14,285 [90] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountPhone		Account Phone of Account: 194419-001M is found
+2025-04-16 10:54:14,296 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:54:14,303 [89] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:54:14,310 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountEmail		Client Email of Account: 194419-001M is found
+2025-04-16 10:54:14,318 [89] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-16 10:54:14,326 [88] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountAddress		Account Address of Account: 194419-001M is found
+2025-04-16 11:06:44,363 [122] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 11:06:44,455 [122] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found
+2025-04-16 11:23:12,445 [7] INFO  UOBCMS.Classes.Logger - AccountController\GetAccountbyAccno		Account: 194419-001M is found

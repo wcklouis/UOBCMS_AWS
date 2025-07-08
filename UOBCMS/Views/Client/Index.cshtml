@@ -1,0 +1,152 @@
+﻿@model IEnumerable<UOBCMS.Models.cms_client>
+
+@using DevExtreme.AspNet.Mvc
+@using UOBCMS.Models
+
+@{
+    Layout = "_Layout"; // This tells the view to use the _Layout.cshtml file.
+}
+
+<h2>Clients</h2>
+
+<div>
+    @Html.ActionLink("Account List", "Index", "Account")
+</div>
+
+@*pre>@Html.Raw(Json.Serialize(Model))</pre>*@
+
+@if (Model == null || !Model.Any())
+{
+    <p>No data available.</p>
+}
+else
+{
+    <div id="gridContainer"></div>
+
+    @(Html.DevExtreme().DataGrid<cms_client>()
+        .ID("gridContainer")
+        .ShowBorders(true)
+        .FilterRow(filterRow => filterRow
+            .Visible(true)
+            .ApplyFilter(GridApplyFilterMode.Auto)
+        )
+        .SearchPanel(searchPanel => searchPanel
+            .Visible(true)
+            .Width(240)
+            .Placeholder("Search...")
+        )
+        .HeaderFilter(headerFilter => headerFilter.Visible(true))
+        .Scrolling(scrolling => scrolling.RowRenderingMode(GridRowRenderingMode.Virtual))
+        .Paging(paging => paging.PageSize(20))
+        .Pager(pager =>
+        {
+            pager.Visible(true);
+            pager.DisplayMode(GridPagerDisplayMode.Full);
+            pager.ShowPageSizeSelector(true);
+            pager.AllowedPageSizes(new JS("[5, 10, 15, 20, 'all']"));
+            pager.ShowInfo(true);
+            pager.ShowNavigationButtons(true);
+        })
+        .RowAlternationEnabled(true)
+        .ShowRowLines(true)
+        .DataSource(Model)
+        .KeyExpr("Id")
+        .Columns(columns =>
+        {
+            columns.AddFor(m => m.Id).Alignment(HorizontalAlignment.Left).Width(80);
+            columns.AddFor(m => m.Cif).Caption("CIF").Alignment(HorizontalAlignment.Left).Width(100);
+            columns.AddFor(m => m.Ename).Alignment(HorizontalAlignment.Left).Caption("Name (Eng)");
+            columns.AddFor(m => m.Cname).Alignment(HorizontalAlignment.Left).Caption("Name (Chi)");
+            columns.AddFor(m => m.NatureString).Alignment(HorizontalAlignment.Left).Caption("Nature");
+            columns.AddFor(m => m.CategoryString).Alignment(HorizontalAlignment.Left).Caption("Category");
+            columns.AddFor(m => m.StatusString).Caption("Status");
+            columns.Add()
+                .Type(GridCommandColumnType.Buttons)
+                .Buttons(b =>
+                {
+                    b.Add()
+                        .Icon("edit") // Specify your icon here
+                        .OnClick(@<text>function(e) { performAction(e.row.data.Id); }</text>); // Call your function with the row ID
+                });
+        })
+        //.OnRowDblClick("onRowDoubleClick") // Capture double-click event
+        .Selection(s => s.Mode(SelectionMode.Multiple))
+        .Export(e => e.Enabled(true)
+            .AllowExportSelectedData(true)
+            .Formats(new[] { "pdf" })
+        )
+        .OnExporting("exportToPDF")
+        .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+        .OnExporting("exportToExcel")
+    )
+}
+
+<!--<a asp-action="Create">Add New Client</a>-->
+
+<script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    $(function () {
+        DevExpress.ui.themes.current("material.blue.light");
+    });
+
+    function performAction(id) {
+        // Replace this alert with your desired action, like navigating to an edit page
+
+        //alert('Edit action for ID: ' + id);
+
+        window.location.href = '@Url.Action("", "Client")' + 'clients/' + id;
+        // Example: Redirect to an edit page
+        // window.location.href = '/YourController/Edit/' + id;
+    }
+
+    function onRowDoubleClick(e) {
+        // Get the data from the clicked row
+        var rowData = e.data;
+
+        // Example action: Redirect to a details page
+        window.location.href = '@Url.Action("", "Client")' + 'clients/' + rowData.Id;
+
+        // Alternatively, you can perform other actions with rowData
+        // console.log(rowData);
+    }
+
+    function exportToPDF(e) {
+        var doc = new jsPDF();
+
+        DevExpress.pdfExporter.exportDataGrid({
+            jsPDFDocument: doc,
+            component: e.component,
+            indent: 5,
+        }).then(function () {
+            doc.save("Clients.pdf");
+        });
+    }
+
+    function exportToExcel(e) {
+        var workbook = new ExcelJS.Workbook();
+        var worksheet = workbook.addWorksheet('Clients');
+
+        DevExpress.excelExporter.exportDataGrid({
+            component: e.component,
+            worksheet: worksheet,
+            autoFilterEnabled: true
+        }).then(function () {
+            workbook.xlsx.writeBuffer().then(function (buffer) {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Clients.xlsx');
+            });
+        });
+    }
+
+    function navigateToDetails(event) {
+        // Redirect to the Details action of RFQ_FCN controller
+        var rowElement = event.target.closest('tr'); // Find the closest row
+
+        var data = $('#gridContainer').dxDataGrid('instance').getDataSource().items().find(item => item.Id == rowElement.dataset.id);
+
+        // Redirect to the Details action of Client controller
+        if (data) {
+            window.location.href = '@Url.Action("clients", "Client", new { id = "__id__" })'.replace('__id__', data.Id);
+        }
+    }
+</script>

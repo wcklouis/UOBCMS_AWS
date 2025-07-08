@@ -1,0 +1,2074 @@
+[
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "Index",
+    "RelativePath": "Account/accounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "Details",
+    "RelativePath": "Account/accounts/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountbyAccno",
+    "RelativePath": "Account/api/accountByAccno/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccounts",
+    "RelativePath": "Account/api/accounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountDetails",
+    "RelativePath": "Account/api/accounts/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountAddInfos",
+    "RelativePath": "Account/api/addinfos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountAddresses",
+    "RelativePath": "Account/api/addresses/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountAuthParties",
+    "RelativePath": "Account/api/authparties/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountBanks",
+    "RelativePath": "Account/api/banks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountCompanyStructure",
+    "RelativePath": "Account/api/companystructure/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountControllingPersons",
+    "RelativePath": "Account/api/controllingpersons/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountDKQs",
+    "RelativePath": "Account/api/dkqs/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountDocs",
+    "RelativePath": "Account/api/docs/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountEmails",
+    "RelativePath": "Account/api/emails/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountHKIDRs",
+    "RelativePath": "Account/api/hkidrs/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountLimits",
+    "RelativePath": "Account/api/limits/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountMarkets",
+    "RelativePath": "Account/api/markets/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountPhones",
+    "RelativePath": "Account/api/phones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountSocialMedias",
+    "RelativePath": "Account/api/socialmedias/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountW8s",
+    "RelativePath": "Account/api/w8s/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccount",
+    "RelativePath": "Account/GetAccount/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountAddress",
+    "RelativePath": "Account/GetAccountAddress/{accno}/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountAddresses",
+    "RelativePath": "Account/GetAccountAddresses/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_address, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountDKQ",
+    "RelativePath": "Account/GetAccountDKQ/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountEmail",
+    "RelativePath": "Account/GetAccountEmail/{accno}/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountEmails",
+    "RelativePath": "Account/GetAccountEmails/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_email, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountLocalBank",
+    "RelativePath": "Account/GetAccountLocalBank/{accno}/{clientbankId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "clientbankId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountLocalBanks",
+    "RelativePath": "Account/GetAccountLocalBanks/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_bank, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountMthSavingPlans",
+    "RelativePath": "Account/GetAccountMthSavingPlan/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_account_mthsaving_plan, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountOverseaBank",
+    "RelativePath": "Account/GetAccountOverseaBank/{accno}/{clientbankId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "clientbankId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountOverseaBanks",
+    "RelativePath": "Account/GetAccountOverseaBanks/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_bank, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountPhone",
+    "RelativePath": "Account/GetAccountPhone/{accno}/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountPhones",
+    "RelativePath": "Account/GetAccountPhones/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_phone, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccountW8",
+    "RelativePath": "Account/GetAccountW8/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetAccRelatedAccs",
+    "RelativePath": "Account/GetAccRelatedAccs/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.cms_client_account, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetClientInsHoldings",
+    "RelativePath": "Account/GetClientInsHoldings/{dt}/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dt",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetIBOAccountCPerson",
+    "RelativePath": "Account/GetIBOAccountCPerson/{accno}/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.IBO.ClntContact, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetIBOAccountCRS",
+    "RelativePath": "Account/GetIBOAccountCRS/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetIBOUserContact",
+    "RelativePath": "Account/GetIBOUserContact/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.IBO.UserIDContact, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetInstrumentName",
+    "RelativePath": "Account/GetInstrumentName/{mktcode}/{seccode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mktcode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "seccode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "GetSimilarEmail",
+    "RelativePath": "Account/GetSimilarEmail/{accno}/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveAddress",
+    "RelativePath": "Account/SaveAddress",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientAddress",
+        "Type": "UOBCMS.Models.api.body_cms_client_address",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBank",
+    "RelativePath": "Account/SaveBank",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientBank",
+        "Type": "UOBCMS.Models.api.body_cms_client_bank",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBulkAddress",
+    "RelativePath": "Account/SaveBulkAddress",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientAddress",
+        "Type": "UOBCMS.Models.api.body_cms_client_address",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBulkBank",
+    "RelativePath": "Account/SaveBulkBank",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientBank",
+        "Type": "UOBCMS.Models.api.body_cms_client_bank",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBulkEmail",
+    "RelativePath": "Account/SaveBulkEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientEmail",
+        "Type": "UOBCMS.Models.api.body_cms_client_email",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBulkPhone",
+    "RelativePath": "Account/SaveBulkPhone",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientPhone",
+        "Type": "UOBCMS.Models.api.body_cms_client_phone",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveBulkPhone_backup",
+    "RelativePath": "Account/SaveBulkPhone_backup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientPhone",
+        "Type": "UOBCMS.Models.api.body_cms_client_phone",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveDKQ",
+    "RelativePath": "Account/SaveDKQ",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyAccountDKQ",
+        "Type": "UOBCMS.Models.api.body_cms_account_dkq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveEmail",
+    "RelativePath": "Account/SaveEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientEmail",
+        "Type": "UOBCMS.Models.api.body_cms_client_email",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveEmailByType",
+    "RelativePath": "Account/SaveEmailByType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientEmail",
+        "Type": "UOBCMS.Models.api.body_cms_client_email",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveHKIDR",
+    "RelativePath": "Account/SaveHKIDR",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyAccountHKIDR",
+        "Type": "UOBCMS.Models.api.body_cms_account_hkidr",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveMthSavingPlan",
+    "RelativePath": "Account/SaveMthSavingPlan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyAccountMthSavingPlanList",
+        "Type": "System.Collections.Generic.List\u00601[[UOBCMS.Models.api.body_cms_account_mthsaving_plan, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SavePhone",
+    "RelativePath": "Account/SavePhone",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientPhone",
+        "Type": "UOBCMS.Models.api.body_cms_client_phone",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveQuoteService",
+    "RelativePath": "Account/SaveQuoteService",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyAccountQuoteService",
+        "Type": "UOBCMS.Models.api.body_cms_account_quoteservice",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "SaveW8",
+    "RelativePath": "Account/SaveW8",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyAccountW8",
+        "Type": "UOBCMS.Models.api.body_cms_account_w8",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "VoidLocalBank",
+    "RelativePath": "Account/VoidLocalBank",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientBank",
+        "Type": "UOBCMS.Models.api.body_cms_client_bank",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountController",
+    "Method": "VoidOverseaBank",
+    "RelativePath": "Account/VoidOverseaBank",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bodyClientBank",
+        "Type": "UOBCMS.Models.api.body_cms_client_bank",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountMarketController",
+    "Method": "Details",
+    "RelativePath": "AccountMarket/accountmarkets/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountMarketBrokerageController",
+    "Method": "Details",
+    "RelativePath": "AccountMarketBrokerage/accountmarketccies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AccountMarketInterestController",
+    "Method": "Details",
+    "RelativePath": "AccountMarketInterest/accountmarketccies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AddrCompController",
+    "Method": "GetDistricts",
+    "RelativePath": "AddrComp/GetDistricts/{country}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "country",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AddrCompController",
+    "Method": "GetProvinces",
+    "RelativePath": "AddrComp/GetProvinces/{country}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "country",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.AEController",
+    "Method": "GetAEbyAccno",
+    "RelativePath": "AE/api/aeByAccno/{accno}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accno",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.BankController",
+    "Method": "GetBanks",
+    "RelativePath": "api/Banks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bankType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.dto.BankDto, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetClients",
+    "RelativePath": "Client/api/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetClientDetails",
+    "RelativePath": "Client/api/clients/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetClientAddress",
+    "RelativePath": "Client/api/clients/address/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "ApproveUpdateRequest",
+    "RelativePath": "Client/api/clients/approve-update/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approvalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "ApproveUpdatedAddress",
+    "RelativePath": "Client/api/clients/approve-updated-address/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approvalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "ApproveUpdatedEmail",
+    "RelativePath": "Client/api/clients/approve-updated-email/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approvalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "ApproveUpdatedPhone",
+    "RelativePath": "Client/api/clients/approve-updated-phone/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approvalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetClientEmail",
+    "RelativePath": "Client/api/clients/email/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetAllUpdatedAddresses",
+    "RelativePath": "Client/api/clients/get-all-updatedaddresses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetAllUpdatedEmails",
+    "RelativePath": "Client/api/clients/get-all-updatedemails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetAllUpdatedPhones",
+    "RelativePath": "Client/api/clients/get-all-updatedphones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetAllUpdateRequests",
+    "RelativePath": "Client/api/clients/get-all-updates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetUpdatedAddressDetail",
+    "RelativePath": "Client/api/clients/get-updatedaddress-detail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetUpdatedEmailDetail",
+    "RelativePath": "Client/api/clients/get-updatedemail-detail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetUpdatedPhoneDetail",
+    "RelativePath": "Client/api/clients/get-updatedphone-detail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetUpdatedetail",
+    "RelativePath": "Client/api/clients/getupdatedetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "GetClientPhone",
+    "RelativePath": "Client/api/clients/phone/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "SubmitUpdateRequest",
+    "RelativePath": "Client/api/clients/submit-update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "UOBCMS.Models.update_cms_client",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "SubmitUpdatedAddress",
+    "RelativePath": "Client/api/clients/submit-updated-address",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "UOBCMS.Models.update_cms_client_address",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "SubmitUpdatedEmail",
+    "RelativePath": "Client/api/clients/submit-updated-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "UOBCMS.Models.update_cms_client_email",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "SubmitUpdatedPhone",
+    "RelativePath": "Client/api/clients/submit-updated-phone",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "UOBCMS.Models.update_cms_client_phone",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "Index",
+    "RelativePath": "Client/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientController",
+    "Method": "Details",
+    "RelativePath": "Client/clients/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientBankController",
+    "Method": "Index",
+    "RelativePath": "ClientBank",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientBankController",
+    "Method": "Edit",
+    "RelativePath": "ClientBank/Edit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bank_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bank_name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bank_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Accno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Ccy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bank_accno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DefaultLocalHKDBank",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_swift",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_accname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_accno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_ccy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Corr_bank_name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Corr_bank_swift",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Default_payment_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Fps_payment_type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bank_accname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Other_bank_details",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Corr_bank_country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bene_bank_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Corr_bank_code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Msg_to_bank",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lastupdateuserid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lastupdatedatetime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Version",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dbopr",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ClientBankController",
+    "Method": "Edit",
+    "RelativePath": "ClientBank/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.InstrumentController",
+    "Method": "GetInstruments",
+    "RelativePath": "Instrument",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mkt",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.Models.dto.InstrumentDto, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.InstrumentController",
+    "Method": "GetInstrument",
+    "RelativePath": "Instrument/api/instrument/{mktCode}/{secCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mktCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "secCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.OCRController",
+    "Method": "GetAddress",
+    "RelativePath": "OCR/api/getAddress",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.OCRController",
+    "Method": "getBankAccInfo",
+    "RelativePath": "OCR/api/getBankAccInfo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.ScheduleController",
+    "Method": "SyncAEFromEReport",
+    "RelativePath": "Schedule/SyncAEFromEReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UOBCMS.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UOBCMS.WeatherForecast, UOBCMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
